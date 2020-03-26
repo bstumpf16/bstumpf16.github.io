@@ -1,0 +1,21 @@
+--- 
+title: "Statistics for Psychology"
+author: "B. Cameron Stumpf"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+description: "This is a draft of a super amazing stats textbook that I will totally write."
+---
+
+# Introduction
+
+I'm writing this because students seem to collectively suffer when it comes to learning statistics. Why is that? I want to fix it and make everyone's lives easier. I love statistics! Why shouldn't you? (Note to self: that sounds a little cheesy. Perhaps I should through in some more sass).  
+
+No, seriously, I love stats. It's actually kind of cool to see how real-life things can become numbers. It's especially exciting when those numbers become graphics that can reveal things you wouldn't have noticed otherwise.  
+
+Anyways, I'm a student too. I get it. You probably aren't even reading this. That's okay, you have like 3 exams to study for and a paper to write. Best of luck to you! My goal is for this to be as minimalist and digestable as possible to spare you time. 
+
+If you have any questions, comments, or opinions, don't hesitate to reach out. Email me at `bstumpf16@georgefox.edu`.  
+
+Special thanks to the professors who made me love math: Dr. Christina Aldrich, Dr. Christopher Koch, Dr. Sue O'Donnell, and Dr. Kelly Chang. Love you all!  

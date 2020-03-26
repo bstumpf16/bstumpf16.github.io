@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 30 Correlation and Regression | Statistics for Psychology</title>
+  <meta name="description" content="This is a draft of a super amazing stats textbook that I will totally write." />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 30 Correlation and Regression | Statistics for Psychology" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a draft of a super amazing stats textbook that I will totally write." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 30 Correlation and Regression | Statistics for Psychology" />
+  
+  <meta name="twitter:description" content="This is a draft of a super amazing stats textbook that I will totally write." />
+  
+
+<meta name="author" content="B. Cameron Stumpf" />
+
+
+<meta name="date" content="2020-03-26" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="two-way-anova-1.html"/>
+<link rel="next" href="chi-square-test-1.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Friendly Statistics</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="what-is-statistics.html"><a href="what-is-statistics.html"><i class="fa fa-check"></i><b>2</b> What is statistics?</a><ul>
+<li class="chapter" data-level="2.1" data-path="what-is-statistics.html"><a href="what-is-statistics.html#statistics-in-psychology"><i class="fa fa-check"></i><b>2.1</b> Statistics in Psychology</a></li>
+<li class="chapter" data-level="2.2" data-path="what-is-statistics.html"><a href="what-is-statistics.html#populations-and-samples"><i class="fa fa-check"></i><b>2.2</b> Populations and Samples</a></li>
+<li class="chapter" data-level="2.3" data-path="what-is-statistics.html"><a href="what-is-statistics.html#probability"><i class="fa fa-check"></i><b>2.3</b> Probability</a></li>
+<li class="chapter" data-level="2.4" data-path="what-is-statistics.html"><a href="what-is-statistics.html#notation"><i class="fa fa-check"></i><b>2.4</b> Notation</a></li>
+<li class="chapter" data-level="2.5" data-path="what-is-statistics.html"><a href="what-is-statistics.html#controversy"><i class="fa fa-check"></i><b>2.5</b> Controversy</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="data.html"><a href="data.html"><i class="fa fa-check"></i><b>3</b> Data</a><ul>
+<li class="chapter" data-level="3.1" data-path="data.html"><a href="data.html#what-is-data"><i class="fa fa-check"></i><b>3.1</b> What is data?</a></li>
+<li class="chapter" data-level="3.2" data-path="data.html"><a href="data.html#types-of-data-and-measurement"><i class="fa fa-check"></i><b>3.2</b> Types of data and Measurement</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="data.html"><a href="data.html#nominal"><i class="fa fa-check"></i><b>3.2.1</b> Nominal</a></li>
+<li class="chapter" data-level="3.2.2" data-path="data.html"><a href="data.html#ordinal"><i class="fa fa-check"></i><b>3.2.2</b> Ordinal</a></li>
+<li class="chapter" data-level="3.2.3" data-path="data.html"><a href="data.html#interval"><i class="fa fa-check"></i><b>3.2.3</b> Interval</a></li>
+<li class="chapter" data-level="3.2.4" data-path="data.html"><a href="data.html#ratio"><i class="fa fa-check"></i><b>3.2.4</b> Ratio</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="data.html"><a href="data.html#organizing-data"><i class="fa fa-check"></i><b>3.3</b> Organizing Data</a></li>
+<li class="chapter" data-level="3.4" data-path="data.html"><a href="data.html#visualizing-data"><i class="fa fa-check"></i><b>3.4</b> Visualizing Data</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="measuring-central-tendency-and-variability.html"><a href="measuring-central-tendency-and-variability.html"><i class="fa fa-check"></i><b>4</b> Measuring Central Tendency and Variability</a><ul>
+<li class="chapter" data-level="4.1" data-path="measuring-central-tendency-and-variability.html"><a href="measuring-central-tendency-and-variability.html#central-tendency"><i class="fa fa-check"></i><b>4.1</b> Central Tendency</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="measuring-central-tendency-and-variability.html"><a href="measuring-central-tendency-and-variability.html#common-measures-of-central-tendency"><i class="fa fa-check"></i><b>4.1.1</b> Common Measures of Central Tendency</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="measuring-central-tendency-and-variability.html"><a href="measuring-central-tendency-and-variability.html#variability"><i class="fa fa-check"></i><b>4.2</b> Variability</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="measuring-central-tendency-and-variability.html"><a href="measuring-central-tendency-and-variability.html#common-measures-of-variability"><i class="fa fa-check"></i><b>4.2.1</b> Common Measures of Variability</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="measuring-central-tendency-and-variability.html"><a href="measuring-central-tendency-and-variability.html#in-populations"><i class="fa fa-check"></i><b>4.3</b> In Populations</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="estimating-and-sampling-distributions.html"><a href="estimating-and-sampling-distributions.html"><i class="fa fa-check"></i><b>5</b> Estimating and Sampling Distributions</a><ul>
+<li class="chapter" data-level="5.1" data-path="estimating-and-sampling-distributions.html"><a href="estimating-and-sampling-distributions.html#distribution-of-sample-means"><i class="fa fa-check"></i><b>5.1</b> Distribution of Sample Means</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html"><i class="fa fa-check"></i><b>6</b> Hypothesis Testing</a></li>
+<li class="chapter" data-level="7" data-path="single-sample-z-test.html"><a href="single-sample-z-test.html"><i class="fa fa-check"></i><b>7</b> Single Sample Z-Test</a><ul>
+<li class="chapter" data-level="7.1" data-path="single-sample-z-test.html"><a href="single-sample-z-test.html#example-setup"><i class="fa fa-check"></i><b>7.1</b> Example Setup</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="single-sample-z-test.html"><a href="single-sample-z-test.html#hypotheses"><i class="fa fa-check"></i><b>7.1.1</b> Hypotheses</a></li>
+<li class="chapter" data-level="7.1.2" data-path="single-sample-z-test.html"><a href="single-sample-z-test.html#critical-z-value-cv"><i class="fa fa-check"></i><b>7.1.2</b> Critical <em>z</em>-Value (CV)</a></li>
+<li class="chapter" data-level="7.1.3" data-path="single-sample-z-test.html"><a href="single-sample-z-test.html#calculate-z"><i class="fa fa-check"></i><b>7.1.3</b> Calculate <em>z</em></a></li>
+<li class="chapter" data-level="7.1.4" data-path="single-sample-z-test.html"><a href="single-sample-z-test.html#compare-observed-z-to-cv"><i class="fa fa-check"></i><b>7.1.4</b> Compare Observed <em>z</em> to CV</a></li>
+<li class="chapter" data-level="7.1.5" data-path="single-sample-z-test.html"><a href="single-sample-z-test.html#calculate-effect-size"><i class="fa fa-check"></i><b>7.1.5</b> Calculate Effect Size</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="single-sample-t-test.html"><a href="single-sample-t-test.html"><i class="fa fa-check"></i><b>8</b> Single Sample T-Test</a><ul>
+<li class="chapter" data-level="8.1" data-path="single-sample-t-test.html"><a href="single-sample-t-test.html#example-setup-1"><i class="fa fa-check"></i><b>8.1</b> Example Setup</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="single-sample-t-test.html"><a href="single-sample-t-test.html#hypotheses-1"><i class="fa fa-check"></i><b>8.1.1</b> Hypotheses</a></li>
+<li class="chapter" data-level="8.1.2" data-path="single-sample-t-test.html"><a href="single-sample-t-test.html#critical-t-value-cv"><i class="fa fa-check"></i><b>8.1.2</b> Critical <em>t</em>-Value (CV)</a></li>
+<li class="chapter" data-level="8.1.3" data-path="single-sample-t-test.html"><a href="single-sample-t-test.html#calculate-t"><i class="fa fa-check"></i><b>8.1.3</b> Calculate <em>t</em></a></li>
+<li class="chapter" data-level="8.1.4" data-path="single-sample-t-test.html"><a href="single-sample-t-test.html#compare-observed-t-to-cv"><i class="fa fa-check"></i><b>8.1.4</b> Compare Observed <em>t</em> to CV</a></li>
+<li class="chapter" data-level="8.1.5" data-path="single-sample-t-test.html"><a href="single-sample-t-test.html#calculate-effect-size-1"><i class="fa fa-check"></i><b>8.1.5</b> Calculate Effect Size</a></li>
+<li class="chapter" data-level="8.1.6" data-path="single-sample-t-test.html"><a href="single-sample-t-test.html#calculate-confidence-interval-ci"><i class="fa fa-check"></i><b>8.1.6</b> Calculate Confidence Interval (CI)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="independent-samples-t-test.html"><a href="independent-samples-t-test.html"><i class="fa fa-check"></i><b>9</b> Independent Samples T-Test</a><ul>
+<li class="chapter" data-level="9.1" data-path="independent-samples-t-test.html"><a href="independent-samples-t-test.html#example-setup-2"><i class="fa fa-check"></i><b>9.1</b> Example Setup</a><ul>
+<li class="chapter" data-level="9.1.1" data-path="independent-samples-t-test.html"><a href="independent-samples-t-test.html#hypotheses-2"><i class="fa fa-check"></i><b>9.1.1</b> Hypotheses</a></li>
+<li class="chapter" data-level="9.1.2" data-path="independent-samples-t-test.html"><a href="independent-samples-t-test.html#critical-t-value-cv-1"><i class="fa fa-check"></i><b>9.1.2</b> Critical <em>t</em>-Value (CV)</a></li>
+<li class="chapter" data-level="9.1.3" data-path="independent-samples-t-test.html"><a href="independent-samples-t-test.html#calculate-t-1"><i class="fa fa-check"></i><b>9.1.3</b> Calculate <em>t</em></a></li>
+<li class="chapter" data-level="9.1.4" data-path="independent-samples-t-test.html"><a href="independent-samples-t-test.html#compare-observed-t-to-cv-1"><i class="fa fa-check"></i><b>9.1.4</b> Compare Observed <em>t</em> to CV</a></li>
+<li class="chapter" data-level="9.1.5" data-path="independent-samples-t-test.html"><a href="independent-samples-t-test.html#calculate-effect-size-2"><i class="fa fa-check"></i><b>9.1.5</b> Calculate Effect Size</a></li>
+<li class="chapter" data-level="9.1.6" data-path="independent-samples-t-test.html"><a href="independent-samples-t-test.html#calculate-confidence-interval-ci-1"><i class="fa fa-check"></i><b>9.1.6</b> Calculate Confidence Interval (CI)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="repeated-measures-t-test.html"><a href="repeated-measures-t-test.html"><i class="fa fa-check"></i><b>10</b> Repeated Measures T-Test</a><ul>
+<li class="chapter" data-level="10.1" data-path="repeated-measures-t-test.html"><a href="repeated-measures-t-test.html#example-setup-3"><i class="fa fa-check"></i><b>10.1</b> Example Setup</a><ul>
+<li class="chapter" data-level="10.1.1" data-path="repeated-measures-t-test.html"><a href="repeated-measures-t-test.html#hypotheses-3"><i class="fa fa-check"></i><b>10.1.1</b> Hypotheses</a></li>
+<li class="chapter" data-level="10.1.2" data-path="repeated-measures-t-test.html"><a href="repeated-measures-t-test.html#critical-t-value-cv-2"><i class="fa fa-check"></i><b>10.1.2</b> Critical <em>t</em>-Value (CV)</a></li>
+<li class="chapter" data-level="10.1.3" data-path="repeated-measures-t-test.html"><a href="repeated-measures-t-test.html#calculate-t-2"><i class="fa fa-check"></i><b>10.1.3</b> Calculate <em>t</em></a></li>
+<li class="chapter" data-level="10.1.4" data-path="repeated-measures-t-test.html"><a href="repeated-measures-t-test.html#compare-observed-t-to-cv-2"><i class="fa fa-check"></i><b>10.1.4</b> Compare Observed <em>t</em> to CV</a></li>
+<li class="chapter" data-level="10.1.5" data-path="repeated-measures-t-test.html"><a href="repeated-measures-t-test.html#calculate-effect-size-3"><i class="fa fa-check"></i><b>10.1.5</b> Calculate Effect Size</a></li>
+<li class="chapter" data-level="10.1.6" data-path="repeated-measures-t-test.html"><a href="repeated-measures-t-test.html#calculate-confidence-interval-ci-2"><i class="fa fa-check"></i><b>10.1.6</b> Calculate Confidence Interval (CI)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="one-way-between-subjects-anova.html"><a href="one-way-between-subjects-anova.html"><i class="fa fa-check"></i><b>11</b> One-Way Between-Subjects ANOVA</a><ul>
+<li class="chapter" data-level="11.1" data-path="one-way-between-subjects-anova.html"><a href="one-way-between-subjects-anova.html#example-setup-4"><i class="fa fa-check"></i><b>11.1</b> Example Setup</a><ul>
+<li class="chapter" data-level="11.1.1" data-path="one-way-between-subjects-anova.html"><a href="one-way-between-subjects-anova.html#hypotheses-4"><i class="fa fa-check"></i><b>11.1.1</b> Hypotheses</a></li>
+<li class="chapter" data-level="11.1.2" data-path="one-way-between-subjects-anova.html"><a href="one-way-between-subjects-anova.html#critical-f-value-cv"><i class="fa fa-check"></i><b>11.1.2</b> Critical <em>F</em>-Value (CV)</a></li>
+<li class="chapter" data-level="11.1.3" data-path="one-way-between-subjects-anova.html"><a href="one-way-between-subjects-anova.html#calculate-f"><i class="fa fa-check"></i><b>11.1.3</b> Calculate <em>F</em></a></li>
+<li class="chapter" data-level="11.1.4" data-path="one-way-between-subjects-anova.html"><a href="one-way-between-subjects-anova.html#compare-observed-f-to-cv"><i class="fa fa-check"></i><b>11.1.4</b> Compare Observed <em>F</em> to CV</a></li>
+<li class="chapter" data-level="11.1.5" data-path="one-way-between-subjects-anova.html"><a href="one-way-between-subjects-anova.html#calculate-effect-size-4"><i class="fa fa-check"></i><b>11.1.5</b> Calculate Effect Size</a></li>
+<li class="chapter" data-level="11.1.6" data-path="one-way-between-subjects-anova.html"><a href="one-way-between-subjects-anova.html#post-hoc-testing"><i class="fa fa-check"></i><b>11.1.6</b> Post Hoc Testing</a></li>
+<li class="chapter" data-level="11.1.7" data-path="one-way-between-subjects-anova.html"><a href="one-way-between-subjects-anova.html#calculate-confidence-interval-ci-3"><i class="fa fa-check"></i><b>11.1.7</b> Calculate Confidence Interval (CI)</a></li>
+</ul></li>
+<li class="chapter" data-level="11.2" data-path="one-way-between-subjects-anova.html"><a href="one-way-between-subjects-anova.html#tips"><i class="fa fa-check"></i><b>11.2</b> Tips</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="one-way-repeated-measures-anova.html"><a href="one-way-repeated-measures-anova.html"><i class="fa fa-check"></i><b>12</b> One-Way Repeated Measures ANOVA</a><ul>
+<li class="chapter" data-level="12.1" data-path="one-way-repeated-measures-anova.html"><a href="one-way-repeated-measures-anova.html#example-setup-5"><i class="fa fa-check"></i><b>12.1</b> Example Setup</a><ul>
+<li class="chapter" data-level="12.1.1" data-path="one-way-repeated-measures-anova.html"><a href="one-way-repeated-measures-anova.html#hypotheses-5"><i class="fa fa-check"></i><b>12.1.1</b> Hypotheses</a></li>
+<li class="chapter" data-level="12.1.2" data-path="one-way-repeated-measures-anova.html"><a href="one-way-repeated-measures-anova.html#critical-f-value-cv-1"><i class="fa fa-check"></i><b>12.1.2</b> Critical <em>F</em>-Value (CV)</a></li>
+<li class="chapter" data-level="12.1.3" data-path="one-way-repeated-measures-anova.html"><a href="one-way-repeated-measures-anova.html#calculate-f-1"><i class="fa fa-check"></i><b>12.1.3</b> Calculate <em>F</em></a></li>
+<li class="chapter" data-level="12.1.4" data-path="one-way-repeated-measures-anova.html"><a href="one-way-repeated-measures-anova.html#compare-observed-f-to-cv-1"><i class="fa fa-check"></i><b>12.1.4</b> Compare Observed <em>F</em> to CV</a></li>
+<li class="chapter" data-level="12.1.5" data-path="one-way-repeated-measures-anova.html"><a href="one-way-repeated-measures-anova.html#calculate-effect-size-5"><i class="fa fa-check"></i><b>12.1.5</b> Calculate Effect Size</a></li>
+<li class="chapter" data-level="12.1.6" data-path="one-way-repeated-measures-anova.html"><a href="one-way-repeated-measures-anova.html#post-hoc-testing-1"><i class="fa fa-check"></i><b>12.1.6</b> Post Hoc Testing</a></li>
+<li class="chapter" data-level="12.1.7" data-path="one-way-repeated-measures-anova.html"><a href="one-way-repeated-measures-anova.html#calculate-confidence-interval-ci-4"><i class="fa fa-check"></i><b>12.1.7</b> Calculate Confidence Interval (CI)</a></li>
+</ul></li>
+<li class="chapter" data-level="12.2" data-path="one-way-repeated-measures-anova.html"><a href="one-way-repeated-measures-anova.html#tips-1"><i class="fa fa-check"></i><b>12.2</b> Tips</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="two-way-anova.html"><a href="two-way-anova.html"><i class="fa fa-check"></i><b>13</b> Two-Way ANOVA</a><ul>
+<li class="chapter" data-level="13.1" data-path="two-way-anova.html"><a href="two-way-anova.html#example-setup-6"><i class="fa fa-check"></i><b>13.1</b> Example Setup</a><ul>
+<li class="chapter" data-level="13.1.1" data-path="two-way-anova.html"><a href="two-way-anova.html#hypotheses-6"><i class="fa fa-check"></i><b>13.1.1</b> Hypotheses</a></li>
+<li class="chapter" data-level="13.1.2" data-path="two-way-anova.html"><a href="two-way-anova.html#critical-f-value-cv-2"><i class="fa fa-check"></i><b>13.1.2</b> Critical <em>F</em>-Value (CV)</a></li>
+<li class="chapter" data-level="13.1.3" data-path="two-way-anova.html"><a href="two-way-anova.html#calculate-f-2"><i class="fa fa-check"></i><b>13.1.3</b> Calculate <em>F</em></a></li>
+<li class="chapter" data-level="13.1.4" data-path="two-way-anova.html"><a href="two-way-anova.html#compare-observed-f-value-to-cvs"><i class="fa fa-check"></i><b>13.1.4</b> Compare Observed <em>F</em>-Value to CVs</a></li>
+<li class="chapter" data-level="13.1.5" data-path="two-way-anova.html"><a href="two-way-anova.html#calculate-effect-size-6"><i class="fa fa-check"></i><b>13.1.5</b> Calculate Effect Size</a></li>
+</ul></li>
+<li class="chapter" data-level="13.2" data-path="two-way-anova.html"><a href="two-way-anova.html#tips-2"><i class="fa fa-check"></i><b>13.2</b> Tips</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html"><i class="fa fa-check"></i><b>14</b> Correlation and Regression</a><ul>
+<li class="chapter" data-level="14.1" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#example-setup-7"><i class="fa fa-check"></i><b>14.1</b> Example Setup</a><ul>
+<li class="chapter" data-level="14.1.1" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#hypotheses-7"><i class="fa fa-check"></i><b>14.1.1</b> Hypotheses</a></li>
+<li class="chapter" data-level="14.1.2" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#calculate-r"><i class="fa fa-check"></i><b>14.1.2</b> Calculate <em>r</em></a></li>
+<li class="chapter" data-level="14.1.3" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#determine-critical-t-value-cv"><i class="fa fa-check"></i><b>14.1.3</b> Determine Critical <em>t</em>-Value (CV)</a></li>
+<li class="chapter" data-level="14.1.4" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#calculate-t-3"><i class="fa fa-check"></i><b>14.1.4</b> Calculate <em>t</em></a></li>
+<li class="chapter" data-level="14.1.5" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#compare-observed-t-to-cv-3"><i class="fa fa-check"></i><b>14.1.5</b> Compare Observed <em>t</em> to CV</a></li>
+<li class="chapter" data-level="14.1.6" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#calculate-effect-size-7"><i class="fa fa-check"></i><b>14.1.6</b> Calculate Effect Size</a></li>
+<li class="chapter" data-level="14.1.7" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#estimate-regression-equation"><i class="fa fa-check"></i><b>14.1.7</b> Estimate Regression Equation</a></li>
+<li class="chapter" data-level="14.1.8" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#testing-significance-of-regression"><i class="fa fa-check"></i><b>14.1.8</b> Testing Significance of Regression</a></li>
+</ul></li>
+<li class="chapter" data-level="14.2" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#tips-3"><i class="fa fa-check"></i><b>14.2</b> Tips</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="chi-square-test.html"><a href="chi-square-test.html"><i class="fa fa-check"></i><b>15</b> Chi-Square Test</a><ul>
+<li class="chapter" data-level="15.1" data-path="chi-square-test.html"><a href="chi-square-test.html#example-setup-8"><i class="fa fa-check"></i><b>15.1</b> Example Setup</a><ul>
+<li class="chapter" data-level="15.1.1" data-path="chi-square-test.html"><a href="chi-square-test.html#hypotheses-9"><i class="fa fa-check"></i><b>15.1.1</b> Hypotheses</a></li>
+<li class="chapter" data-level="15.1.2" data-path="chi-square-test.html"><a href="chi-square-test.html#calculate-chi2"><i class="fa fa-check"></i><b>15.1.2</b> Calculate <span class="math inline">\(\chi^2\)</span></a></li>
+<li class="chapter" data-level="15.1.3" data-path="chi-square-test.html"><a href="chi-square-test.html#determine-critical-chi2-value-cv"><i class="fa fa-check"></i><b>15.1.3</b> Determine Critical <span class="math inline">\(\chi^2\)</span>-Value (CV)</a></li>
+<li class="chapter" data-level="15.1.4" data-path="chi-square-test.html"><a href="chi-square-test.html#compare-observed-chi2-to-cv"><i class="fa fa-check"></i><b>15.1.4</b> Compare Observed <span class="math inline">\(\chi^2\)</span> to CV</a></li>
+<li class="chapter" data-level="15.1.5" data-path="chi-square-test.html"><a href="chi-square-test.html#calculate-effect-size-8"><i class="fa fa-check"></i><b>15.1.5</b> Calculate Effect Size</a></li>
+</ul></li>
+<li class="chapter" data-level="15.2" data-path="chi-square-test.html"><a href="chi-square-test.html#chi2-goodness-of-fit-test"><i class="fa fa-check"></i><b>15.2</b> <span class="math inline">\(\chi^2\)</span> Goodness-of-Fit Test</a></li>
+<li class="chapter" data-level="15.3" data-path="chi-square-test.html"><a href="chi-square-test.html#tips-4"><i class="fa fa-check"></i><b>15.3</b> Tips</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>16</b> References</a></li>
+<li class="chapter" data-level="17" data-path="introduction-1.html"><a href="introduction-1.html"><i class="fa fa-check"></i><b>17</b> Introduction</a></li>
+<li class="chapter" data-level="18" data-path="what-is-statistics-1.html"><a href="what-is-statistics-1.html"><i class="fa fa-check"></i><b>18</b> What is statistics?</a><ul>
+<li class="chapter" data-level="18.1" data-path="what-is-statistics-1.html"><a href="what-is-statistics-1.html#statistics-in-psychology-1"><i class="fa fa-check"></i><b>18.1</b> Statistics in Psychology</a></li>
+<li class="chapter" data-level="18.2" data-path="what-is-statistics-1.html"><a href="what-is-statistics-1.html#populations-and-samples-1"><i class="fa fa-check"></i><b>18.2</b> Populations and Samples</a></li>
+<li class="chapter" data-level="18.3" data-path="what-is-statistics-1.html"><a href="what-is-statistics-1.html#probability-1"><i class="fa fa-check"></i><b>18.3</b> Probability</a></li>
+<li class="chapter" data-level="18.4" data-path="what-is-statistics-1.html"><a href="what-is-statistics-1.html#notation-1"><i class="fa fa-check"></i><b>18.4</b> Notation</a></li>
+<li class="chapter" data-level="18.5" data-path="what-is-statistics-1.html"><a href="what-is-statistics-1.html#controversy-1"><i class="fa fa-check"></i><b>18.5</b> Controversy</a></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="data-1.html"><a href="data-1.html"><i class="fa fa-check"></i><b>19</b> Data</a><ul>
+<li class="chapter" data-level="19.1" data-path="data-1.html"><a href="data-1.html#what-is-data-1"><i class="fa fa-check"></i><b>19.1</b> What is data?</a></li>
+<li class="chapter" data-level="19.2" data-path="data-1.html"><a href="data-1.html#types-of-data-and-measurement-1"><i class="fa fa-check"></i><b>19.2</b> Types of data and Measurement</a><ul>
+<li class="chapter" data-level="19.2.1" data-path="data-1.html"><a href="data-1.html#nominal-1"><i class="fa fa-check"></i><b>19.2.1</b> Nominal</a></li>
+<li class="chapter" data-level="19.2.2" data-path="data-1.html"><a href="data-1.html#ordinal-1"><i class="fa fa-check"></i><b>19.2.2</b> Ordinal</a></li>
+<li class="chapter" data-level="19.2.3" data-path="data-1.html"><a href="data-1.html#interval-1"><i class="fa fa-check"></i><b>19.2.3</b> Interval</a></li>
+<li class="chapter" data-level="19.2.4" data-path="data-1.html"><a href="data-1.html#ratio-1"><i class="fa fa-check"></i><b>19.2.4</b> Ratio</a></li>
+</ul></li>
+<li class="chapter" data-level="19.3" data-path="data-1.html"><a href="data-1.html#organizing-data-1"><i class="fa fa-check"></i><b>19.3</b> Organizing Data</a></li>
+<li class="chapter" data-level="19.4" data-path="data-1.html"><a href="data-1.html#visualizing-data-1"><i class="fa fa-check"></i><b>19.4</b> Visualizing Data</a></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="measuring-central-tendency-and-variability-1.html"><a href="measuring-central-tendency-and-variability-1.html"><i class="fa fa-check"></i><b>20</b> Measuring Central Tendency and Variability</a><ul>
+<li class="chapter" data-level="20.1" data-path="measuring-central-tendency-and-variability-1.html"><a href="measuring-central-tendency-and-variability-1.html#central-tendency-1"><i class="fa fa-check"></i><b>20.1</b> Central Tendency</a><ul>
+<li class="chapter" data-level="20.1.1" data-path="measuring-central-tendency-and-variability-1.html"><a href="measuring-central-tendency-and-variability-1.html#common-measures-of-central-tendency-1"><i class="fa fa-check"></i><b>20.1.1</b> Common Measures of Central Tendency</a></li>
+</ul></li>
+<li class="chapter" data-level="20.2" data-path="measuring-central-tendency-and-variability-1.html"><a href="measuring-central-tendency-and-variability-1.html#variability-1"><i class="fa fa-check"></i><b>20.2</b> Variability</a><ul>
+<li class="chapter" data-level="20.2.1" data-path="measuring-central-tendency-and-variability-1.html"><a href="measuring-central-tendency-and-variability-1.html#common-measures-of-variability-1"><i class="fa fa-check"></i><b>20.2.1</b> Common Measures of Variability</a></li>
+</ul></li>
+<li class="chapter" data-level="20.3" data-path="measuring-central-tendency-and-variability-1.html"><a href="measuring-central-tendency-and-variability-1.html#in-populations-1"><i class="fa fa-check"></i><b>20.3</b> In Populations</a></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="estimating-and-sampling-distributions-1.html"><a href="estimating-and-sampling-distributions-1.html"><i class="fa fa-check"></i><b>21</b> Estimating and Sampling Distributions</a><ul>
+<li class="chapter" data-level="21.1" data-path="estimating-and-sampling-distributions-1.html"><a href="estimating-and-sampling-distributions-1.html#distribution-of-sample-means-1"><i class="fa fa-check"></i><b>21.1</b> Distribution of Sample Means</a></li>
+</ul></li>
+<li class="chapter" data-level="22" data-path="hypothesis-testing-1.html"><a href="hypothesis-testing-1.html"><i class="fa fa-check"></i><b>22</b> Hypothesis Testing</a></li>
+<li class="chapter" data-level="23" data-path="single-sample-z-test-1.html"><a href="single-sample-z-test-1.html"><i class="fa fa-check"></i><b>23</b> Single Sample Z-Test</a><ul>
+<li class="chapter" data-level="23.1" data-path="single-sample-z-test-1.html"><a href="single-sample-z-test-1.html#example-setup-9"><i class="fa fa-check"></i><b>23.1</b> Example Setup</a><ul>
+<li class="chapter" data-level="23.1.1" data-path="single-sample-z-test-1.html"><a href="single-sample-z-test-1.html#hypotheses-10"><i class="fa fa-check"></i><b>23.1.1</b> Hypotheses</a></li>
+<li class="chapter" data-level="23.1.2" data-path="single-sample-z-test-1.html"><a href="single-sample-z-test-1.html#critical-z-value-cv-1"><i class="fa fa-check"></i><b>23.1.2</b> Critical <em>z</em>-Value (CV)</a></li>
+<li class="chapter" data-level="23.1.3" data-path="single-sample-z-test-1.html"><a href="single-sample-z-test-1.html#calculate-z-1"><i class="fa fa-check"></i><b>23.1.3</b> Calculate <em>z</em></a></li>
+<li class="chapter" data-level="23.1.4" data-path="single-sample-z-test-1.html"><a href="single-sample-z-test-1.html#compare-observed-z-to-cv-1"><i class="fa fa-check"></i><b>23.1.4</b> Compare Observed <em>z</em> to CV</a></li>
+<li class="chapter" data-level="23.1.5" data-path="single-sample-z-test-1.html"><a href="single-sample-z-test-1.html#calculate-effect-size-9"><i class="fa fa-check"></i><b>23.1.5</b> Calculate Effect Size</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="24" data-path="single-sample-t-test-1.html"><a href="single-sample-t-test-1.html"><i class="fa fa-check"></i><b>24</b> Single Sample T-Test</a><ul>
+<li class="chapter" data-level="24.1" data-path="single-sample-t-test-1.html"><a href="single-sample-t-test-1.html#example-setup-10"><i class="fa fa-check"></i><b>24.1</b> Example Setup</a><ul>
+<li class="chapter" data-level="24.1.1" data-path="single-sample-t-test-1.html"><a href="single-sample-t-test-1.html#hypotheses-11"><i class="fa fa-check"></i><b>24.1.1</b> Hypotheses</a></li>
+<li class="chapter" data-level="24.1.2" data-path="single-sample-t-test-1.html"><a href="single-sample-t-test-1.html#critical-t-value-cv-3"><i class="fa fa-check"></i><b>24.1.2</b> Critical <em>t</em>-Value (CV)</a></li>
+<li class="chapter" data-level="24.1.3" data-path="single-sample-t-test-1.html"><a href="single-sample-t-test-1.html#calculate-t-4"><i class="fa fa-check"></i><b>24.1.3</b> Calculate <em>t</em></a></li>
+<li class="chapter" data-level="24.1.4" data-path="single-sample-t-test-1.html"><a href="single-sample-t-test-1.html#compare-observed-t-to-cv-4"><i class="fa fa-check"></i><b>24.1.4</b> Compare Observed <em>t</em> to CV</a></li>
+<li class="chapter" data-level="24.1.5" data-path="single-sample-t-test-1.html"><a href="single-sample-t-test-1.html#calculate-effect-size-10"><i class="fa fa-check"></i><b>24.1.5</b> Calculate Effect Size</a></li>
+<li class="chapter" data-level="24.1.6" data-path="single-sample-t-test-1.html"><a href="single-sample-t-test-1.html#calculate-confidence-interval-ci-5"><i class="fa fa-check"></i><b>24.1.6</b> Calculate Confidence Interval (CI)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="25" data-path="independent-samples-t-test-1.html"><a href="independent-samples-t-test-1.html"><i class="fa fa-check"></i><b>25</b> Independent Samples T-Test</a><ul>
+<li class="chapter" data-level="25.1" data-path="independent-samples-t-test-1.html"><a href="independent-samples-t-test-1.html#example-setup-11"><i class="fa fa-check"></i><b>25.1</b> Example Setup</a><ul>
+<li class="chapter" data-level="25.1.1" data-path="independent-samples-t-test-1.html"><a href="independent-samples-t-test-1.html#hypotheses-12"><i class="fa fa-check"></i><b>25.1.1</b> Hypotheses</a></li>
+<li class="chapter" data-level="25.1.2" data-path="independent-samples-t-test-1.html"><a href="independent-samples-t-test-1.html#critical-t-value-cv-4"><i class="fa fa-check"></i><b>25.1.2</b> Critical <em>t</em>-Value (CV)</a></li>
+<li class="chapter" data-level="25.1.3" data-path="independent-samples-t-test-1.html"><a href="independent-samples-t-test-1.html#calculate-t-5"><i class="fa fa-check"></i><b>25.1.3</b> Calculate <em>t</em></a></li>
+<li class="chapter" data-level="25.1.4" data-path="independent-samples-t-test-1.html"><a href="independent-samples-t-test-1.html#compare-observed-t-to-cv-5"><i class="fa fa-check"></i><b>25.1.4</b> Compare Observed <em>t</em> to CV</a></li>
+<li class="chapter" data-level="25.1.5" data-path="independent-samples-t-test-1.html"><a href="independent-samples-t-test-1.html#calculate-effect-size-11"><i class="fa fa-check"></i><b>25.1.5</b> Calculate Effect Size</a></li>
+<li class="chapter" data-level="25.1.6" data-path="independent-samples-t-test-1.html"><a href="independent-samples-t-test-1.html#calculate-confidence-interval-ci-6"><i class="fa fa-check"></i><b>25.1.6</b> Calculate Confidence Interval (CI)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="26" data-path="repeated-measures-t-test-1.html"><a href="repeated-measures-t-test-1.html"><i class="fa fa-check"></i><b>26</b> Repeated Measures T-Test</a><ul>
+<li class="chapter" data-level="26.1" data-path="repeated-measures-t-test-1.html"><a href="repeated-measures-t-test-1.html#example-setup-12"><i class="fa fa-check"></i><b>26.1</b> Example Setup</a><ul>
+<li class="chapter" data-level="26.1.1" data-path="repeated-measures-t-test-1.html"><a href="repeated-measures-t-test-1.html#hypotheses-13"><i class="fa fa-check"></i><b>26.1.1</b> Hypotheses</a></li>
+<li class="chapter" data-level="26.1.2" data-path="repeated-measures-t-test-1.html"><a href="repeated-measures-t-test-1.html#critical-t-value-cv-5"><i class="fa fa-check"></i><b>26.1.2</b> Critical <em>t</em>-Value (CV)</a></li>
+<li class="chapter" data-level="26.1.3" data-path="repeated-measures-t-test-1.html"><a href="repeated-measures-t-test-1.html#calculate-t-6"><i class="fa fa-check"></i><b>26.1.3</b> Calculate <em>t</em></a></li>
+<li class="chapter" data-level="26.1.4" data-path="repeated-measures-t-test-1.html"><a href="repeated-measures-t-test-1.html#compare-observed-t-to-cv-6"><i class="fa fa-check"></i><b>26.1.4</b> Compare Observed <em>t</em> to CV</a></li>
+<li class="chapter" data-level="26.1.5" data-path="repeated-measures-t-test-1.html"><a href="repeated-measures-t-test-1.html#calculate-effect-size-12"><i class="fa fa-check"></i><b>26.1.5</b> Calculate Effect Size</a></li>
+<li class="chapter" data-level="26.1.6" data-path="repeated-measures-t-test-1.html"><a href="repeated-measures-t-test-1.html#calculate-confidence-interval-ci-7"><i class="fa fa-check"></i><b>26.1.6</b> Calculate Confidence Interval (CI)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="27" data-path="one-way-between-subjects-anova-1.html"><a href="one-way-between-subjects-anova-1.html"><i class="fa fa-check"></i><b>27</b> One-Way Between-Subjects ANOVA</a><ul>
+<li class="chapter" data-level="27.1" data-path="one-way-between-subjects-anova-1.html"><a href="one-way-between-subjects-anova-1.html#example-setup-13"><i class="fa fa-check"></i><b>27.1</b> Example Setup</a><ul>
+<li class="chapter" data-level="27.1.1" data-path="one-way-between-subjects-anova-1.html"><a href="one-way-between-subjects-anova-1.html#hypotheses-14"><i class="fa fa-check"></i><b>27.1.1</b> Hypotheses</a></li>
+<li class="chapter" data-level="27.1.2" data-path="one-way-between-subjects-anova-1.html"><a href="one-way-between-subjects-anova-1.html#critical-f-value-cv-3"><i class="fa fa-check"></i><b>27.1.2</b> Critical <em>F</em>-Value (CV)</a></li>
+<li class="chapter" data-level="27.1.3" data-path="one-way-between-subjects-anova-1.html"><a href="one-way-between-subjects-anova-1.html#calculate-f-3"><i class="fa fa-check"></i><b>27.1.3</b> Calculate <em>F</em></a></li>
+<li class="chapter" data-level="27.1.4" data-path="one-way-between-subjects-anova-1.html"><a href="one-way-between-subjects-anova-1.html#compare-observed-f-to-cv-2"><i class="fa fa-check"></i><b>27.1.4</b> Compare Observed <em>F</em> to CV</a></li>
+<li class="chapter" data-level="27.1.5" data-path="one-way-between-subjects-anova-1.html"><a href="one-way-between-subjects-anova-1.html#calculate-effect-size-13"><i class="fa fa-check"></i><b>27.1.5</b> Calculate Effect Size</a></li>
+<li class="chapter" data-level="27.1.6" data-path="one-way-between-subjects-anova-1.html"><a href="one-way-between-subjects-anova-1.html#post-hoc-testing-2"><i class="fa fa-check"></i><b>27.1.6</b> Post Hoc Testing</a></li>
+<li class="chapter" data-level="27.1.7" data-path="one-way-between-subjects-anova-1.html"><a href="one-way-between-subjects-anova-1.html#calculate-confidence-interval-ci-8"><i class="fa fa-check"></i><b>27.1.7</b> Calculate Confidence Interval (CI)</a></li>
+</ul></li>
+<li class="chapter" data-level="27.2" data-path="one-way-between-subjects-anova-1.html"><a href="one-way-between-subjects-anova-1.html#tips-5"><i class="fa fa-check"></i><b>27.2</b> Tips</a></li>
+</ul></li>
+<li class="chapter" data-level="28" data-path="one-way-repeated-measures-anova-1.html"><a href="one-way-repeated-measures-anova-1.html"><i class="fa fa-check"></i><b>28</b> One-Way Repeated Measures ANOVA</a><ul>
+<li class="chapter" data-level="28.1" data-path="one-way-repeated-measures-anova-1.html"><a href="one-way-repeated-measures-anova-1.html#example-setup-14"><i class="fa fa-check"></i><b>28.1</b> Example Setup</a><ul>
+<li class="chapter" data-level="28.1.1" data-path="one-way-repeated-measures-anova-1.html"><a href="one-way-repeated-measures-anova-1.html#hypotheses-15"><i class="fa fa-check"></i><b>28.1.1</b> Hypotheses</a></li>
+<li class="chapter" data-level="28.1.2" data-path="one-way-repeated-measures-anova-1.html"><a href="one-way-repeated-measures-anova-1.html#critical-f-value-cv-4"><i class="fa fa-check"></i><b>28.1.2</b> Critical <em>F</em>-Value (CV)</a></li>
+<li class="chapter" data-level="28.1.3" data-path="one-way-repeated-measures-anova-1.html"><a href="one-way-repeated-measures-anova-1.html#calculate-f-4"><i class="fa fa-check"></i><b>28.1.3</b> Calculate <em>F</em></a></li>
+<li class="chapter" data-level="28.1.4" data-path="one-way-repeated-measures-anova-1.html"><a href="one-way-repeated-measures-anova-1.html#compare-observed-f-to-cv-3"><i class="fa fa-check"></i><b>28.1.4</b> Compare Observed <em>F</em> to CV</a></li>
+<li class="chapter" data-level="28.1.5" data-path="one-way-repeated-measures-anova-1.html"><a href="one-way-repeated-measures-anova-1.html#calculate-effect-size-14"><i class="fa fa-check"></i><b>28.1.5</b> Calculate Effect Size</a></li>
+<li class="chapter" data-level="28.1.6" data-path="one-way-repeated-measures-anova-1.html"><a href="one-way-repeated-measures-anova-1.html#post-hoc-testing-3"><i class="fa fa-check"></i><b>28.1.6</b> Post Hoc Testing</a></li>
+<li class="chapter" data-level="28.1.7" data-path="one-way-repeated-measures-anova-1.html"><a href="one-way-repeated-measures-anova-1.html#calculate-confidence-interval-ci-9"><i class="fa fa-check"></i><b>28.1.7</b> Calculate Confidence Interval (CI)</a></li>
+</ul></li>
+<li class="chapter" data-level="28.2" data-path="one-way-repeated-measures-anova-1.html"><a href="one-way-repeated-measures-anova-1.html#tips-6"><i class="fa fa-check"></i><b>28.2</b> Tips</a></li>
+</ul></li>
+<li class="chapter" data-level="29" data-path="two-way-anova-1.html"><a href="two-way-anova-1.html"><i class="fa fa-check"></i><b>29</b> Two-Way ANOVA</a><ul>
+<li class="chapter" data-level="29.1" data-path="two-way-anova-1.html"><a href="two-way-anova-1.html#example-setup-15"><i class="fa fa-check"></i><b>29.1</b> Example Setup</a><ul>
+<li class="chapter" data-level="29.1.1" data-path="two-way-anova-1.html"><a href="two-way-anova-1.html#hypotheses-16"><i class="fa fa-check"></i><b>29.1.1</b> Hypotheses</a></li>
+<li class="chapter" data-level="29.1.2" data-path="two-way-anova-1.html"><a href="two-way-anova-1.html#critical-f-value-cv-5"><i class="fa fa-check"></i><b>29.1.2</b> Critical <em>F</em>-Value (CV)</a></li>
+<li class="chapter" data-level="29.1.3" data-path="two-way-anova-1.html"><a href="two-way-anova-1.html#calculate-f-5"><i class="fa fa-check"></i><b>29.1.3</b> Calculate <em>F</em></a></li>
+<li class="chapter" data-level="29.1.4" data-path="two-way-anova-1.html"><a href="two-way-anova-1.html#compare-observed-f-value-to-cvs-1"><i class="fa fa-check"></i><b>29.1.4</b> Compare Observed <em>F</em>-Value to CVs</a></li>
+<li class="chapter" data-level="29.1.5" data-path="two-way-anova-1.html"><a href="two-way-anova-1.html#calculate-effect-size-15"><i class="fa fa-check"></i><b>29.1.5</b> Calculate Effect Size</a></li>
+</ul></li>
+<li class="chapter" data-level="29.2" data-path="two-way-anova-1.html"><a href="two-way-anova-1.html#tips-7"><i class="fa fa-check"></i><b>29.2</b> Tips</a></li>
+</ul></li>
+<li class="chapter" data-level="30" data-path="correlation-and-regression-1.html"><a href="correlation-and-regression-1.html"><i class="fa fa-check"></i><b>30</b> Correlation and Regression</a><ul>
+<li class="chapter" data-level="30.1" data-path="correlation-and-regression-1.html"><a href="correlation-and-regression-1.html#example-setup-16"><i class="fa fa-check"></i><b>30.1</b> Example Setup</a><ul>
+<li class="chapter" data-level="30.1.1" data-path="correlation-and-regression-1.html"><a href="correlation-and-regression-1.html#hypotheses-17"><i class="fa fa-check"></i><b>30.1.1</b> Hypotheses</a></li>
+<li class="chapter" data-level="30.1.2" data-path="correlation-and-regression-1.html"><a href="correlation-and-regression-1.html#calculate-r-1"><i class="fa fa-check"></i><b>30.1.2</b> Calculate <em>r</em></a></li>
+<li class="chapter" data-level="30.1.3" data-path="correlation-and-regression-1.html"><a href="correlation-and-regression-1.html#determine-critical-t-value-cv-1"><i class="fa fa-check"></i><b>30.1.3</b> Determine Critical <em>t</em>-Value (CV)</a></li>
+<li class="chapter" data-level="30.1.4" data-path="correlation-and-regression-1.html"><a href="correlation-and-regression-1.html#calculate-t-7"><i class="fa fa-check"></i><b>30.1.4</b> Calculate <em>t</em></a></li>
+<li class="chapter" data-level="30.1.5" data-path="correlation-and-regression-1.html"><a href="correlation-and-regression-1.html#compare-observed-t-to-cv-7"><i class="fa fa-check"></i><b>30.1.5</b> Compare Observed <em>t</em> to CV</a></li>
+<li class="chapter" data-level="30.1.6" data-path="correlation-and-regression-1.html"><a href="correlation-and-regression-1.html#calculate-effect-size-16"><i class="fa fa-check"></i><b>30.1.6</b> Calculate Effect Size</a></li>
+<li class="chapter" data-level="30.1.7" data-path="correlation-and-regression-1.html"><a href="correlation-and-regression-1.html#estimate-regression-equation-1"><i class="fa fa-check"></i><b>30.1.7</b> Estimate Regression Equation</a></li>
+<li class="chapter" data-level="30.1.8" data-path="correlation-and-regression-1.html"><a href="correlation-and-regression-1.html#testing-significance-of-regression-1"><i class="fa fa-check"></i><b>30.1.8</b> Testing Significance of Regression</a></li>
+</ul></li>
+<li class="chapter" data-level="30.2" data-path="correlation-and-regression-1.html"><a href="correlation-and-regression-1.html#tips-8"><i class="fa fa-check"></i><b>30.2</b> Tips</a></li>
+</ul></li>
+<li class="chapter" data-level="31" data-path="chi-square-test-1.html"><a href="chi-square-test-1.html"><i class="fa fa-check"></i><b>31</b> Chi-Square Test</a><ul>
+<li class="chapter" data-level="31.1" data-path="chi-square-test-1.html"><a href="chi-square-test-1.html#example-setup-17"><i class="fa fa-check"></i><b>31.1</b> Example Setup</a><ul>
+<li class="chapter" data-level="31.1.1" data-path="chi-square-test-1.html"><a href="chi-square-test-1.html#hypotheses-19"><i class="fa fa-check"></i><b>31.1.1</b> Hypotheses</a></li>
+<li class="chapter" data-level="31.1.2" data-path="chi-square-test-1.html"><a href="chi-square-test-1.html#calculate-chi2-1"><i class="fa fa-check"></i><b>31.1.2</b> Calculate <span class="math inline">\(\chi^2\)</span></a></li>
+<li class="chapter" data-level="31.1.3" data-path="chi-square-test-1.html"><a href="chi-square-test-1.html#determine-critical-chi2-value-cv-1"><i class="fa fa-check"></i><b>31.1.3</b> Determine Critical <span class="math inline">\(\chi^2\)</span>-Value (CV)</a></li>
+<li class="chapter" data-level="31.1.4" data-path="chi-square-test-1.html"><a href="chi-square-test-1.html#compare-observed-chi2-to-cv-1"><i class="fa fa-check"></i><b>31.1.4</b> Compare Observed <span class="math inline">\(\chi^2\)</span> to CV</a></li>
+<li class="chapter" data-level="31.1.5" data-path="chi-square-test-1.html"><a href="chi-square-test-1.html#calculate-effect-size-17"><i class="fa fa-check"></i><b>31.1.5</b> Calculate Effect Size</a></li>
+</ul></li>
+<li class="chapter" data-level="31.2" data-path="chi-square-test-1.html"><a href="chi-square-test-1.html#chi2-goodness-of-fit-test-1"><i class="fa fa-check"></i><b>31.2</b> <span class="math inline">\(\chi^2\)</span> Goodness-of-Fit Test</a></li>
+<li class="chapter" data-level="31.3" data-path="chi-square-test-1.html"><a href="chi-square-test-1.html#tips-9"><i class="fa fa-check"></i><b>31.3</b> Tips</a></li>
+</ul></li>
+<li class="chapter" data-level="32" data-path="references-1.html"><a href="references-1.html"><i class="fa fa-check"></i><b>32</b> References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Statistics for Psychology</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="correlation-and-regression-1" class="section level1">
+<h1><span class="header-section-number">Chapter 30</span> Correlation and Regression</h1>
+<p><strong>Usage:</strong> To check for a relationship between variables.</p>
+<p><strong>Requirements:</strong> Two or more variables that are interval/ratio.</p>
+<p> </p>
+<hr />
+<p><strong>Steps to calculating a correlation coefficient:</strong></p>
+<ol style="list-style-type: decimal">
+<li>Write out null and alternative hypotheses.<br />
+</li>
+<li>Calculate <em>r</em>-value (correlation coefficient).<br />
+</li>
+<li>Determine critical <em>t</em>-value (yep!) for rejection of null hypothesis.<br />
+A. Use degrees of freedom (df) and alpha level.</li>
+<li>Calculate <em>t</em>-value.</li>
+<li>Compare your calculated <em>t</em>-value to the critical <em>t</em>-value.<br />
+A. If your calculated value is greater than the critical value, you <em>reject</em> the null hypothesis.<br />
+B. If your calculated value is less than the critical value, you <em>fail to reject</em> the null hypothesis.<br />
+</li>
+<li>Calculate effect size (<span class="math inline">\(r^2\)</span>).<br />
+</li>
+<li>Estimate regression equation.<br />
+</li>
+<li>Test significance of regression equation.<br />
+A. Run an ANOVA.</li>
+</ol>
+<hr />
+<div id="example-setup-16" class="section level2">
+<h2><span class="header-section-number">30.1</span> Example Setup</h2>
+<div id="hypotheses-17" class="section level3">
+<h3><span class="header-section-number">30.1.1</span> Hypotheses</h3>
+<p><span class="math inline">\(\Large H_0: \rho = 0\)</span><br />
+<br />
+<span class="math inline">\(\Large H_1: \rho \neq 0\)</span><br />
+<br />
+</p>
+</div>
+<div id="calculate-r-1" class="section level3">
+<h3><span class="header-section-number">30.1.2</span> Calculate <em>r</em></h3>
+<p><span class="math inline">\(\Large n = number\ of\ participants\)</span><br />
+<br />
+</p>
+<p><span class="math inline">\(\Large SS_{X} = \sum X^2 - \frac{(\sum X)^2}{n}\)</span><br />
+<br />
+</p>
+<p><span class="math inline">\(\Large SS_{Y} = \sum Y^2 - \frac{(\sum Y)^2}{n}\)</span><br />
+<br />
+</p>
+<p><span class="math inline">\(\Large SP = \sum XY - \frac{\sum X * \sum Y}{n}\)</span><br />
+<br />
+</p>
+<p><span class="math inline">\(\Large r = \frac{SP}{\sqrt{SS_X * SS_Y}}\)</span><br />
+<br />
+</p>
+</div>
+<div id="determine-critical-t-value-cv-1" class="section level3">
+<h3><span class="header-section-number">30.1.3</span> Determine Critical <em>t</em>-Value (CV)</h3>
+<p><span class="math inline">\(\Large df = n - 2\)</span><br />
+<br />
+</p>
+<p><span class="math inline">\(\Large \alpha = .05\)</span><br />
+<br />
+</p>
+<p><span class="math inline">\(\Large CV = [check\ table]\)</span><br />
+<br />
+</p>
+</div>
+<div id="calculate-t-7" class="section level3">
+<h3><span class="header-section-number">30.1.4</span> Calculate <em>t</em></h3>
+<p><span class="math inline">\(\Large t = \frac{r}{\sqrt{\frac{(1 - r^2}{(n - 2)}})}\)</span></p>
+</div>
+<div id="compare-observed-t-to-cv-7" class="section level3">
+<h3><span class="header-section-number">30.1.5</span> Compare Observed <em>t</em> to CV</h3>
+<p>If <em>t</em> is greater than the CV, <em>reject the null hypothesis.</em><br />
+If <em>t</em> is less than the CV, <em>fail to reject the null hypothesis.</em></p>
+</div>
+<div id="calculate-effect-size-16" class="section level3">
+<h3><span class="header-section-number">30.1.6</span> Calculate Effect Size</h3>
+<p><span class="math inline">\(\Large r^2 = r * r\)</span><br />
+<br />
+</p>
+</div>
+<div id="estimate-regression-equation-1" class="section level3">
+<h3><span class="header-section-number">30.1.7</span> Estimate Regression Equation</h3>
+<p>Regression line equation: <span class="math inline">\(\hat Y = bX + a\)</span><br />
+<br />
+</p>
+<p><span class="math inline">\(\Large b = \frac{SP}{SS_X}\)</span><br />
+<br />
+</p>
+<p><span class="math inline">\(\Large a = \bar Y - (b*\bar X)\)</span><br />
+<br />
+</p>
+<p><span class="math inline">\(\Large SEoE = \sqrt{\frac{(1 - r^2)*SS_Y}{n - 2}}\)</span><br />
+<br />
+</p>
+</div>
+<div id="testing-significance-of-regression-1" class="section level3">
+<h3><span class="header-section-number">30.1.8</span> Testing Significance of Regression</h3>
+<div id="hypotheses-18" class="section level4">
+<h4><span class="header-section-number">30.1.8.1</span> Hypotheses</h4>
+<p><span class="math inline">\(\Large H_0: b = 0\)</span><br />
+<br />
+</p>
+<p><span class="math inline">\(\Large H_1: b \neq 0\)</span><br />
+<br />
+</p>
+</div>
+<div id="run-an-anova-1" class="section level4">
+<h4><span class="header-section-number">30.1.8.2</span> Run an ANOVA</h4>
+<p><span class="math inline">\(\Large df_{regression} = 1\)</span><br />
+<br />
+</p>
+<p><span class="math inline">\(\Large df_{residual} = n - 2\)</span><br />
+<br />
+</p>
+<p><span class="math inline">\(\Large SS_{regression} = r^2*SS_Y\)</span><br />
+<br />
+</p>
+<p><span class="math inline">\(\Large SS_{residual} = (1 - r^2)*SS_Y\)</span><br />
+<br />
+</p>
+<p><span class="math inline">\(\Large MS_{regression} = \frac{SS_{regression}}{df_{regression}}\)</span><br />
+<br />
+</p>
+<p><span class="math inline">\(\Large MS_{residual} = \frac{SS_{residual}}{df_{residual}}\)</span><br />
+<br />
+</p>
+<p><span class="math inline">\(\Large F = \frac{MS_{regression}}{MS_{residual}}\)</span><br />
+<br />
+</p>
+</div>
+<div id="check-significance-1" class="section level4">
+<h4><span class="header-section-number">30.1.8.3</span> Check significance</h4>
+<p><span class="math inline">\(\Large \alpha = .05\)</span><br />
+<br />
+</p>
+<p><span class="math inline">\(\Large CV = [check\ table]\)</span><br />
+<br />
+</p>
+</div>
+</div>
+</div>
+<div id="tips-8" class="section level2">
+<h2><span class="header-section-number">30.2</span> Tips</h2>
+<p>Remember that a <em>t</em>-test is used when hypothesis testing correlation coefficients!</p>
+<p>Remember that <span class="math inline">\(df = n - 2\)</span> for tests of correlation coefficients!</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="two-way-anova-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="chi-square-test-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/13-Corr.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Friendly Statistics.pdf", "Friendly Statistics.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

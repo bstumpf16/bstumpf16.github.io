@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Statistics for Psychology</title>
+  <title>Chapter 13 Two-Way ANOVA | Statistics for Psychology</title>
   <meta name="description" content="This is a draft of a super amazing stats textbook that I will totally write." />
   <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Statistics for Psychology" />
+  <meta property="og:title" content="Chapter 13 Two-Way ANOVA | Statistics for Psychology" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Statistics for Psychology" />
+  <meta name="twitter:title" content="Chapter 13 Two-Way ANOVA | Statistics for Psychology" />
   
   <meta name="twitter:description" content="This is a draft of a super amazing stats textbook that I will totally write." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="what-is-statistics.html"/>
+<link rel="prev" href="one-way-repeated-measures-anova.html"/>
+<link rel="next" href="correlation-and-regression.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -212,27 +212,213 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Statistics for Psychology</h1>
-<p class="author"><em>B. Cameron Stumpf</em></p>
-<p class="date"><em>2020-03-26</em></p>
+<div id="two-way-anova" class="section level1">
+<h1><span class="header-section-number">Chapter 13</span> Two-Way ANOVA</h1>
+<p><strong>Usage:</strong> To check for a difference between three or more group means with two sets of factors.</p>
+<p><strong>Requirements:</strong> Three or more variables that are interval/ratio and two grouping variables.</p>
+<p> </p>
+<hr />
+<p><strong>Steps to conducting an two-way ANOVA:</strong></p>
+<ol style="list-style-type: decimal">
+<li>Write out null and alternative hypotheses.<br />
+A. Main effects of Factor A.<br />
+B. Main effects of Factor B.<br />
+C. Interaction of Factors A and B.</li>
+<li>Determine critical <em>F</em>-values for rejection of null hypotheses.<br />
+A. Use degrees of freedom (df) and alpha level .
+B. One CV for each hypothesis.</li>
+<li>Calculate 3 <em>F</em>-values for your data.<br />
+A. One for each hypothesis.</li>
+<li>Compare your calculated <em>F</em>-value to the critical <em>F</em>-value.<br />
+A. If your calculated value is greater than the critical value, you <em>reject</em> the null hypothesis.<br />
+B. If your calculated value is less than the critical value, you <em>fail to reject</em> the null hypothesis.<br />
+</li>
+<li>Calculate effect size (eta squared <span class="math inline">\(\eta^2\)</span>).</li>
+</ol>
+<hr />
+<div id="example-setup-6" class="section level2">
+<h2><span class="header-section-number">13.1</span> Example Setup</h2>
+<div id="hypotheses-6" class="section level3">
+<h3><span class="header-section-number">13.1.1</span> Hypotheses</h3>
+<p>For Factor A:</p>
+<p><span class="math inline">\(\Large H_0: \mu_{a_1} = \mu_{a_2}\)</span><br />
+<br />
+<span class="math inline">\(\Large H_1: \mu_{a_1} \neq \mu_{a_2}\)</span><br />
+<br />
+</p>
+<p>For Factor B:</p>
+<p><span class="math inline">\(\Large H_0: \mu_{b_1} = \mu_{b_2}\)</span><br />
+<br />
+<span class="math inline">\(\Large H_1: \mu_{b_1} \neq \mu_{b_2}\)</span><br />
+<br />
+</p>
+<p>For Interaction:</p>
+<p><span class="math inline">\(\Large H_0: No\ interaction\)</span><br />
+<br />
+<span class="math inline">\(\Large H_1: Interaction\ present\)</span></p>
 </div>
-<div id="introduction" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
-<p>I’m writing this because students seem to collectively suffer when it comes to learning statistics. Why is that? I want to fix it and make everyone’s lives easier. I love statistics! Why shouldn’t you? (Note to self: that sounds a little cheesy. Perhaps I should through in some more sass).</p>
-<p>No, seriously, I love stats. It’s actually kind of cool to see how real-life things can become numbers. It’s especially exciting when those numbers become graphics that can reveal things you wouldn’t have noticed otherwise.</p>
-<p>Anyways, I’m a student too. I get it. You probably aren’t even reading this. That’s okay, you have like 3 exams to study for and a paper to write. Best of luck to you! My goal is for this to be as minimalist and digestable as possible to spare you time.</p>
-<p>If you have any questions, comments, or opinions, don’t hesitate to reach out. Email me at <code>bstumpf16@georgefox.edu</code>.</p>
-<p>Special thanks to the professors who made me love math: Dr. Christina Aldrich, Dr. Christopher Koch, Dr. Sue O’Donnell, and Dr. Kelly Chang. Love you all!</p>
+<div id="critical-f-value-cv-2" class="section level3">
+<h3><span class="header-section-number">13.1.2</span> Critical <em>F</em>-Value (CV)</h3>
+<p><span class="math inline">\(\Large N = number\ of\ participants\)</span><br />
+<br />
+</p>
+<p><span class="math inline">\(\Large n_{group} = number\ of\ participants\ in\ group\)</span><br />
+<br />
+</p>
+<p><span class="math inline">\(\Large k = number\ of\ groups\)</span><br />
+<br />
+</p>
+<p><span class="math inline">\(\Large df_{between} = k - 1\)</span><br />
+<br />
+</p>
+<p><span class="math inline">\(\Large df_{within} = (levels\ of\ A)*(levels\ of\ B)(n - 1)\)</span><br />
+<br />
+</p>
+<p><span class="math inline">\(\Large df_{total} = N - 1\)</span><br />
+<br />
+</p>
+<p><span class="math inline">\(\Large df_{A} = (levels\ of\ A) - 1\)</span><br />
+<br />
+</p>
+<p><span class="math inline">\(\Large df_{B} = (levels\ of\ B) - 1\)</span><br />
+<br />
+</p>
+<p><span class="math inline">\(\Large df_{interaction} = (df_A)*(df_B)\)</span><br />
+<br />
+</p>
+<p><span class="math inline">\(\Large \alpha = .05\)</span><br />
+<br />
+</p>
+<p><span class="math inline">\(\Large CV = [check\ table]\)</span><br />
+<br />
+</p>
+</div>
+<div id="calculate-f-2" class="section level3">
+<h3><span class="header-section-number">13.1.3</span> Calculate <em>F</em></h3>
+<p><span class="math inline">\(\Large T_{group} = \sum X_{group}\)</span><br />
+<br />
+</p>
+<p><span class="math inline">\(\Large SS_{total} = \sum X^2 - \frac{(\sum X)^2}{N}\)</span><br />
+<br />
+</p>
+<p><span class="math inline">\(\Large SS_{within} = \sum X^2 - \frac{\sum T^2}{n}\)</span><br />
+<br />
+</p>
+<p><span class="math inline">\(\Large SS_{between} = \frac{\sum T^2}{n} - \frac{(\sum X)^2}{N}\)</span><br />
+<br />
+</p>
+<p><span class="math inline">\(\Large SS_{A} = \sum(\frac{T^2_{row}}{n_{row}}) - \frac{(\sum X)^2}{N}\)</span><br />
+<br />
+</p>
+<p><span class="math inline">\(\Large SS_{B} = \sum(\frac{T^2_{col}}{n_{col}}) - \frac{(\sum X)^2}{N}\)</span><br />
+<br />
+</p>
+<p><span class="math inline">\(\Large SS_{AB} = SS_{between} - SS_A - SS_B\)</span><br />
+<br />
+</p>
+<p><span class="math inline">\(\Large MS_{A} = \frac{SS_{A}}{df_{A}}\)</span><br />
+<br />
+</p>
+<p><span class="math inline">\(\Large MS_{B} = \frac{SS_{B}}{df_{B}}\)</span><br />
+<br />
+</p>
+<p><span class="math inline">\(\Large MS_{AB} = \frac{SS_{AB}}{df_{AB}}\)</span><br />
+<br />
+</p>
+<p><span class="math inline">\(\Large F_A = \frac{MS_{A}}{MS_{within}}\)</span><br />
+<br />
+</p>
+<p><span class="math inline">\(\Large F_B = \frac{MS_{B}}{MS_{within}}\)</span><br />
+<br />
+</p>
+<p><span class="math inline">\(\Large F_{AB} = \frac{MS_{AB}}{MS_{within}}\)</span><br />
+<br />
+</p>
+</div>
+<div id="compare-observed-f-value-to-cvs" class="section level3">
+<h3><span class="header-section-number">13.1.4</span> Compare Observed <em>F</em>-Value to CVs</h3>
+<p>If <em>F</em> is greater than the CV, <em>reject the null hypothesis.</em><br />
+If <em>F</em> is less than the CV, <em>fail to reject the null hypothesis.</em></p>
+</div>
+<div id="calculate-effect-size-6" class="section level3">
+<h3><span class="header-section-number">13.1.5</span> Calculate Effect Size</h3>
+<p><span class="math inline">\(\Large \eta^2_A = \frac{SS_{A}}{SS_{A} + SS_{within}}\)</span><br />
+<br />
+</p>
+<p><span class="math inline">\(\Large \eta^2_B = \frac{SS_{B}}{SS_{B} + SS_{within}}\)</span><br />
+<br />
+</p>
+<p><span class="math inline">\(\Large \eta^2_{AB} = \frac{SS_{AB}}{SS_{AB} + SS_{within}}\)</span><br />
+<br />
+</p>
+</div>
+</div>
+<div id="tips-2" class="section level2">
+<h2><span class="header-section-number">13.2</span> Tips</h2>
+<p>Draw a table like the one below to organize your calculations as you go.<br />
+<br />
+</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Source</th>
+<th align="center">SS</th>
+<th align="center">df</th>
+<th align="center">MS</th>
+<th align="center">F</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Main Effect Factor A</td>
+<td align="center">40</td>
+<td align="center">1</td>
+<td align="center">40</td>
+<td align="center">2</td>
+</tr>
+<tr class="even">
+<td align="center">Main Effect Factor B</td>
+<td align="center">40</td>
+<td align="center">1</td>
+<td align="center">40</td>
+<td align="center">2</td>
+</tr>
+<tr class="odd">
+<td align="center">Interaction</td>
+<td align="center">80</td>
+<td align="center">1</td>
+<td align="center">80</td>
+<td align="center">4</td>
+</tr>
+<tr class="even">
+<td align="center">Within</td>
+<td align="center">140</td>
+<td align="center">7</td>
+<td align="center">20</td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center">Total</td>
+<td align="center">300</td>
+<td align="center">10</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+<p><em>F</em> is actually closely related to <em>t</em>: <span class="math inline">\(\Large F = t^2\)</span></p>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="what-is-statistics.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="one-way-repeated-measures-anova.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="correlation-and-regression.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Statistics for Psychology</title>
+  <title>Chapter 14 Correlation and Regression | Statistics for Psychology</title>
   <meta name="description" content="This is a draft of a super amazing stats textbook that I will totally write." />
   <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Statistics for Psychology" />
+  <meta property="og:title" content="Chapter 14 Correlation and Regression | Statistics for Psychology" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Statistics for Psychology" />
+  <meta name="twitter:title" content="Chapter 14 Correlation and Regression | Statistics for Psychology" />
   
   <meta name="twitter:description" content="This is a draft of a super amazing stats textbook that I will totally write." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="what-is-statistics.html"/>
+<link rel="prev" href="two-way-anova.html"/>
+<link rel="next" href="chi-square-test.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -212,27 +212,163 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Statistics for Psychology</h1>
-<p class="author"><em>B. Cameron Stumpf</em></p>
-<p class="date"><em>2020-03-26</em></p>
+<div id="correlation-and-regression" class="section level1">
+<h1><span class="header-section-number">Chapter 14</span> Correlation and Regression</h1>
+<p><strong>Usage:</strong> To check for a relationship between variables.</p>
+<p><strong>Requirements:</strong> Two or more variables that are interval/ratio.</p>
+<p> </p>
+<hr />
+<p><strong>Steps to calculating a correlation coefficient:</strong></p>
+<ol style="list-style-type: decimal">
+<li>Write out null and alternative hypotheses.<br />
+</li>
+<li>Calculate <em>r</em>-value (correlation coefficient).<br />
+</li>
+<li>Determine critical <em>t</em>-value (yep!) for rejection of null hypothesis.<br />
+A. Use degrees of freedom (df) and alpha level.</li>
+<li>Calculate <em>t</em>-value.</li>
+<li>Compare your calculated <em>t</em>-value to the critical <em>t</em>-value.<br />
+A. If your calculated value is greater than the critical value, you <em>reject</em> the null hypothesis.<br />
+B. If your calculated value is less than the critical value, you <em>fail to reject</em> the null hypothesis.<br />
+</li>
+<li>Calculate effect size (<span class="math inline">\(r^2\)</span>).<br />
+</li>
+<li>Estimate regression equation.<br />
+</li>
+<li>Test significance of regression equation.<br />
+A. Run an ANOVA.</li>
+</ol>
+<hr />
+<div id="example-setup-7" class="section level2">
+<h2><span class="header-section-number">14.1</span> Example Setup</h2>
+<div id="hypotheses-7" class="section level3">
+<h3><span class="header-section-number">14.1.1</span> Hypotheses</h3>
+<p><span class="math inline">\(\Large H_0: \rho = 0\)</span><br />
+<br />
+<span class="math inline">\(\Large H_1: \rho \neq 0\)</span><br />
+<br />
+</p>
 </div>
-<div id="introduction" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
-<p>I’m writing this because students seem to collectively suffer when it comes to learning statistics. Why is that? I want to fix it and make everyone’s lives easier. I love statistics! Why shouldn’t you? (Note to self: that sounds a little cheesy. Perhaps I should through in some more sass).</p>
-<p>No, seriously, I love stats. It’s actually kind of cool to see how real-life things can become numbers. It’s especially exciting when those numbers become graphics that can reveal things you wouldn’t have noticed otherwise.</p>
-<p>Anyways, I’m a student too. I get it. You probably aren’t even reading this. That’s okay, you have like 3 exams to study for and a paper to write. Best of luck to you! My goal is for this to be as minimalist and digestable as possible to spare you time.</p>
-<p>If you have any questions, comments, or opinions, don’t hesitate to reach out. Email me at <code>bstumpf16@georgefox.edu</code>.</p>
-<p>Special thanks to the professors who made me love math: Dr. Christina Aldrich, Dr. Christopher Koch, Dr. Sue O’Donnell, and Dr. Kelly Chang. Love you all!</p>
+<div id="calculate-r" class="section level3">
+<h3><span class="header-section-number">14.1.2</span> Calculate <em>r</em></h3>
+<p><span class="math inline">\(\Large n = number\ of\ participants\)</span><br />
+<br />
+</p>
+<p><span class="math inline">\(\Large SS_{X} = \sum X^2 - \frac{(\sum X)^2}{n}\)</span><br />
+<br />
+</p>
+<p><span class="math inline">\(\Large SS_{Y} = \sum Y^2 - \frac{(\sum Y)^2}{n}\)</span><br />
+<br />
+</p>
+<p><span class="math inline">\(\Large SP = \sum XY - \frac{\sum X * \sum Y}{n}\)</span><br />
+<br />
+</p>
+<p><span class="math inline">\(\Large r = \frac{SP}{\sqrt{SS_X * SS_Y}}\)</span><br />
+<br />
+</p>
+</div>
+<div id="determine-critical-t-value-cv" class="section level3">
+<h3><span class="header-section-number">14.1.3</span> Determine Critical <em>t</em>-Value (CV)</h3>
+<p><span class="math inline">\(\Large df = n - 2\)</span><br />
+<br />
+</p>
+<p><span class="math inline">\(\Large \alpha = .05\)</span><br />
+<br />
+</p>
+<p><span class="math inline">\(\Large CV = [check\ table]\)</span><br />
+<br />
+</p>
+</div>
+<div id="calculate-t-3" class="section level3">
+<h3><span class="header-section-number">14.1.4</span> Calculate <em>t</em></h3>
+<p><span class="math inline">\(\Large t = \frac{r}{\sqrt{\frac{(1 - r^2}{(n - 2)}})}\)</span></p>
+</div>
+<div id="compare-observed-t-to-cv-3" class="section level3">
+<h3><span class="header-section-number">14.1.5</span> Compare Observed <em>t</em> to CV</h3>
+<p>If <em>t</em> is greater than the CV, <em>reject the null hypothesis.</em><br />
+If <em>t</em> is less than the CV, <em>fail to reject the null hypothesis.</em></p>
+</div>
+<div id="calculate-effect-size-7" class="section level3">
+<h3><span class="header-section-number">14.1.6</span> Calculate Effect Size</h3>
+<p><span class="math inline">\(\Large r^2 = r * r\)</span><br />
+<br />
+</p>
+</div>
+<div id="estimate-regression-equation" class="section level3">
+<h3><span class="header-section-number">14.1.7</span> Estimate Regression Equation</h3>
+<p>Regression line equation: <span class="math inline">\(\hat Y = bX + a\)</span><br />
+<br />
+</p>
+<p><span class="math inline">\(\Large b = \frac{SP}{SS_X}\)</span><br />
+<br />
+</p>
+<p><span class="math inline">\(\Large a = \bar Y - (b*\bar X)\)</span><br />
+<br />
+</p>
+<p><span class="math inline">\(\Large SEoE = \sqrt{\frac{(1 - r^2)*SS_Y}{n - 2}}\)</span><br />
+<br />
+</p>
+</div>
+<div id="testing-significance-of-regression" class="section level3">
+<h3><span class="header-section-number">14.1.8</span> Testing Significance of Regression</h3>
+<div id="hypotheses-8" class="section level4">
+<h4><span class="header-section-number">14.1.8.1</span> Hypotheses</h4>
+<p><span class="math inline">\(\Large H_0: b = 0\)</span><br />
+<br />
+</p>
+<p><span class="math inline">\(\Large H_1: b \neq 0\)</span><br />
+<br />
+</p>
+</div>
+<div id="run-an-anova" class="section level4">
+<h4><span class="header-section-number">14.1.8.2</span> Run an ANOVA</h4>
+<p><span class="math inline">\(\Large df_{regression} = 1\)</span><br />
+<br />
+</p>
+<p><span class="math inline">\(\Large df_{residual} = n - 2\)</span><br />
+<br />
+</p>
+<p><span class="math inline">\(\Large SS_{regression} = r^2*SS_Y\)</span><br />
+<br />
+</p>
+<p><span class="math inline">\(\Large SS_{residual} = (1 - r^2)*SS_Y\)</span><br />
+<br />
+</p>
+<p><span class="math inline">\(\Large MS_{regression} = \frac{SS_{regression}}{df_{regression}}\)</span><br />
+<br />
+</p>
+<p><span class="math inline">\(\Large MS_{residual} = \frac{SS_{residual}}{df_{residual}}\)</span><br />
+<br />
+</p>
+<p><span class="math inline">\(\Large F = \frac{MS_{regression}}{MS_{residual}}\)</span><br />
+<br />
+</p>
+</div>
+<div id="check-significance" class="section level4">
+<h4><span class="header-section-number">14.1.8.3</span> Check significance</h4>
+<p><span class="math inline">\(\Large \alpha = .05\)</span><br />
+<br />
+</p>
+<p><span class="math inline">\(\Large CV = [check\ table]\)</span><br />
+<br />
+</p>
+</div>
+</div>
+</div>
+<div id="tips-3" class="section level2">
+<h2><span class="header-section-number">14.2</span> Tips</h2>
+<p>Remember that a <em>t</em>-test is used when hypothesis testing correlation coefficients!</p>
+<p>Remember that <span class="math inline">\(df = n - 2\)</span> for tests of correlation coefficients!</p>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="what-is-statistics.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="two-way-anova.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="chi-square-test.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

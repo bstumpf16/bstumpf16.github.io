@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Statistics for Psychology</title>
+  <title>Chapter 3 Data | Statistics for Psychology</title>
   <meta name="description" content="This is a draft of a super amazing stats textbook that I will totally write." />
   <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Statistics for Psychology" />
+  <meta property="og:title" content="Chapter 3 Data | Statistics for Psychology" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Statistics for Psychology" />
+  <meta name="twitter:title" content="Chapter 3 Data | Statistics for Psychology" />
   
   <meta name="twitter:description" content="This is a draft of a super amazing stats textbook that I will totally write." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="what-is-statistics.html"/>
+<link rel="prev" href="what-is-statistics.html"/>
+<link rel="next" href="measuring-central-tendency-and-variability.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -212,27 +212,72 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Statistics for Psychology</h1>
-<p class="author"><em>B. Cameron Stumpf</em></p>
-<p class="date"><em>2020-03-26</em></p>
+<div id="data" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> Data</h1>
+<blockquote>
+<p>“In God we trust, all others bring data.”<br />
+—W. Edwards Deming</p>
+</blockquote>
+<blockquote>
+<p>“You can have data without information, but you cannot have information without data.”<br />
+—Daniel Keys Moran</p>
+</blockquote>
+<div id="what-is-data" class="section level2">
+<h2><span class="header-section-number">3.1</span> What is data?</h2>
+<p>At its simplest, <strong>data is information.</strong> For the purposes of statistical analysis, the majority of data takes the form of numbers that represent things. The number <code>70</code> represents my height in inches. It is a <strong>data point.</strong></p>
+<p>Context is important when it comes to data. If I had given you the number <code>70</code> with no other information, it wouldn’t be very useful. It takes on meaning when I tell you what it is meant to represent. Similarly, if I give you the number <code>22</code> with no other information, you can’t do much with that. It’s only when I tell you that the number represents my age that it is informative.</p>
+<p>Unfortunately, data (for our purposes) doesn’t just materialize out of thin air. We have to collect it. That’s where measurement comes in.</p>
 </div>
-<div id="introduction" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
-<p>I’m writing this because students seem to collectively suffer when it comes to learning statistics. Why is that? I want to fix it and make everyone’s lives easier. I love statistics! Why shouldn’t you? (Note to self: that sounds a little cheesy. Perhaps I should through in some more sass).</p>
-<p>No, seriously, I love stats. It’s actually kind of cool to see how real-life things can become numbers. It’s especially exciting when those numbers become graphics that can reveal things you wouldn’t have noticed otherwise.</p>
-<p>Anyways, I’m a student too. I get it. You probably aren’t even reading this. That’s okay, you have like 3 exams to study for and a paper to write. Best of luck to you! My goal is for this to be as minimalist and digestable as possible to spare you time.</p>
-<p>If you have any questions, comments, or opinions, don’t hesitate to reach out. Email me at <code>bstumpf16@georgefox.edu</code>.</p>
-<p>Special thanks to the professors who made me love math: Dr. Christina Aldrich, Dr. Christopher Koch, Dr. Sue O’Donnell, and Dr. Kelly Chang. Love you all!</p>
+<div id="types-of-data-and-measurement" class="section level2">
+<h2><span class="header-section-number">3.2</span> Types of data and Measurement</h2>
+<p><strong>Measurement</strong> is the process of quantifying something. By measuring my height, I assigned a number to myself that I can then use. I can share it with friends, compare it with others my age, or feel sad that it’s not a little higher. By the same process, I can measure the heights of 20 other people. I would then be <strong>collecting data.</strong></p>
+<p>Now, measurement is a hot topic. And really, it’s just a theory. There’s no perfect consensus on the proper way to think about measurement. Sorry to introduce some gray area and subjectivity, but that’s where we’re at. Who said things had to be easy? I won’t bore you with the details (there are too many to cover here anyway), but interested readers can read more about it elsewhere<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>.</p>
+<p>Gray area is difficult to live in when it comes to mathematics, so at a point we must be decisive. One of the most widely accepted models of measurement in the field of psychology was published by Stanley Smith Stevens in 1946. Stevens classified measurement as falling into four types: nominal, ordinal, interval, or ratio. Each has specific characteristics and huge implications for how we handle data.</p>
+<div id="nominal" class="section level3">
+<h3><span class="header-section-number">3.2.1</span> Nominal</h3>
+<p><strong>Nominal</strong> measurements are those that differ qualitatively from one another. They are typically used for identification and little else. There is a lot of freedom given to nominal measurements and consequently difficulty defining them precisely. It is almost easier to speak of what you cannot do with nominal measurements. You <em>cannot</em> order them in a way such that one is greater than another.</p>
+<p>Some examples of nominal measurements include: gender, ethnicity, nationality, and favorite flavor of ice-cream.</p>
+</div>
+<div id="ordinal" class="section level3">
+<h3><span class="header-section-number">3.2.2</span> Ordinal</h3>
+<p><strong>Ordinal</strong> measurements are those that can be ordered (isn’t it nice when names make sense?). In other words, we can rank things measured on an ordinal scale. We are allowed to say that one thing is less than another thing. Beyond that, there’s not much we can do. This measurement tells us nothing about the <em>distance</em> between each measurement, only the order.</p>
+<p>Some examples of ordinal measurements include: letter grades, pain rating scales, personality questionaires, and race placement (1st place, 2nd place, etc.).</p>
+</div>
+<div id="interval" class="section level3">
+<h3><span class="header-section-number">3.2.3</span> Interval</h3>
+<p><strong>Interval</strong> measurements are those that contain, you guess it, intervals! These measurements are such that a 1-unit decrease is equal to a 1-unit increase. Whereas ordinal scales told us nothing about the distance between measurements, interval scales finally allow us to do so. An important thing to note about interval measurements is that they do not have a true zero-point. It doesn’t make sense to speak of “zero temperature.”</p>
+<p>Some examples of interval measurements include Fahrenheit and hours on a clock.</p>
+</div>
+<div id="ratio" class="section level3">
+<h3><span class="header-section-number">3.2.4</span> Ratio</h3>
+<p><strong>Ratio</strong> measurements give us the most information out of the four types. Ratio scales are nearly identical to interval scales. The big difference is that ratio scales actually have a true zero point!</p>
+<p>Some examples of ratio measurements include: Kelvin, distance, age, and weight.</p>
+</div>
+</div>
+<div id="organizing-data" class="section level2">
+<h2><span class="header-section-number">3.3</span> Organizing Data</h2>
+</div>
+<div id="visualizing-data" class="section level2">
+<h2><span class="header-section-number">3.4</span> Visualizing Data</h2>
+<p>Numbers aren’t always intuitive way for humans to understand data. It often helps to <em>see</em> the data in the form of a graphic.</p>
+<p>Below are some examples of commonly used graphics.</p>
+<p><img src="Friendly-Statistics_files/figure-html/unnamed-chunk-1-1.png" width="672" /><img src="Friendly-Statistics_files/figure-html/unnamed-chunk-1-2.png" width="672" /></p>
 
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="2">
+<li id="fn2"><p>insert a footnote to direct students<a href="data.html#fnref2" class="footnote-back">↩</a></p></li>
+</ol>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="what-is-statistics.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="what-is-statistics.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="measuring-central-tendency-and-variability.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

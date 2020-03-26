@@ -3,7 +3,11 @@ title: "Statistics for Psychology"
 author: "B. Cameron Stumpf"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
-output: bookdown::gitbook
+output: 
+  bookdown::gitbook:
+    config:
+      toc:
+        collapse: section
 documentclass: book
 description: "This is a draft of a super amazing stats textbook that I will totally write."
 ---

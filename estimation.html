@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 13 Two-Way ANOVA | Statistics for Psychology</title>
+  <title>Chapter 5 Estimation | Statistics for Psychology</title>
   <meta name="description" content="This is a draft of a super amazing stats textbook that I will totally write." />
   <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 13 Two-Way ANOVA | Statistics for Psychology" />
+  <meta property="og:title" content="Chapter 5 Estimation | Statistics for Psychology" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 13 Two-Way ANOVA | Statistics for Psychology" />
+  <meta name="twitter:title" content="Chapter 5 Estimation | Statistics for Psychology" />
   
   <meta name="twitter:description" content="This is a draft of a super amazing stats textbook that I will totally write." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="one-way-repeated-measures-anova.html"/>
-<link rel="next" href="correlation-and-regression.html"/>
+<link rel="prev" href="describing-data.html"/>
+<link rel="next" href="hypothesis-testing.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -234,203 +234,100 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="two-way-anova" class="section level1">
-<h1><span class="header-section-number">Chapter 13</span> Two-Way ANOVA</h1>
-<p><strong>Usage:</strong> To check for a difference between three or more group means with two sets of factors.</p>
-<p><strong>Requirements:</strong> Three or more variables that are interval/ratio and two grouping variables.</p>
-<p> </p>
-<hr />
-<p><strong>Steps to conducting an two-way ANOVA:</strong></p>
-<ol style="list-style-type: decimal">
-<li>Write out null and alternative hypotheses.<br />
-A. Main effects of Factor A.<br />
-B. Main effects of Factor B.<br />
-C. Interaction of Factors A and B.</li>
-<li>Determine critical <em>F</em>-values for rejection of null hypotheses.<br />
-A. Use degrees of freedom (df) and alpha level .
-B. One CV for each hypothesis.</li>
-<li>Calculate 3 <em>F</em>-values for your data.<br />
-A. One for each hypothesis.</li>
-<li>Compare your calculated <em>F</em>-value to the critical <em>F</em>-value.<br />
-A. If your calculated value is greater than the critical value, you <em>reject</em> the null hypothesis.<br />
-B. If your calculated value is less than the critical value, you <em>fail to reject</em> the null hypothesis.<br />
-</li>
-<li>Calculate effect size (eta squared <span class="math inline">\(\eta^2\)</span>).</li>
-</ol>
-<hr />
-<div id="example-setup-6" class="section level2">
-<h2><span class="header-section-number">13.1</span> Example Setup</h2>
-<div id="hypotheses-6" class="section level3">
-<h3><span class="header-section-number">13.1.1</span> Hypotheses</h3>
-<p>For Factor A:</p>
-<p><span class="math inline">\(\Large H_0: \mu_{a_1} = \mu_{a_2}\)</span><br />
-<br />
-<span class="math inline">\(\Large H_1: \mu_{a_1} \neq \mu_{a_2}\)</span><br />
-<br />
-</p>
-<p>For Factor B:</p>
-<p><span class="math inline">\(\Large H_0: \mu_{b_1} = \mu_{b_2}\)</span><br />
-<br />
-<span class="math inline">\(\Large H_1: \mu_{b_1} \neq \mu_{b_2}\)</span><br />
-<br />
-</p>
-<p>For Interaction:</p>
-<p><span class="math inline">\(\Large H_0: No\ interaction\)</span><br />
-<br />
-<span class="math inline">\(\Large H_1: Interaction\ present\)</span></p>
+<div id="estimation" class="section level1">
+<h1><span class="header-section-number">Chapter 5</span> Estimation</h1>
+<p>Most of the time, we don’t know the population parameters we are interested in and it would be unrealistic to collect data from everyone in the population. <strong>Estimation</strong> allows us to take a sample from that population and use that sample to make an educated guess about the population. This process is also referred to as <strong>inferential statistics.</strong></p>
+<p>This process usually involves taking a <em>sample statistic</em> and using that to estimate the <em>population parameter</em>. The primary issue here is whether the sample accurately reflects the population or not. Every sample could be different, right? So how do we know which sample to trust?</p>
+<p>The short answer: we don’t. Statisticians wish that such certainty was possible. But then again, the whole concept of statistical analysis is to figure out how to handle our uncertainty. The concept of sampling distributions helps us do this.</p>
+<div id="sampling-distribution" class="section level2">
+<h2><span class="header-section-number">5.1</span> Sampling Distribution</h2>
+<p>A <strong>sampling Distribution of a statistic</strong> is a distribution of all possible values of that statistic from all possible samples of a population. This is not to be confused with the <em>sample distribution</em>, which is the distribution of scores in a sample.</p>
+<p>Say we have a population of <code>100</code>. And say we took a sample of <code>30</code>. That means that there are 70 individuals who were not sampled. Couldn’t we have just as easily chosen a sample of a different 30 individuals? In fact, there are <code>29,372,339,821,610,944,823,963,760</code> different possible samples of we could have taken.</p>
+<p>Now, each of those samples could have given us a different mean. if we had actually taken all possible samples, and taken all possible means, then we would have a large set of numbers. And what can we do with sets of numbers? Graph distributions! More specifically, we can create a <em>sampling distribution of the mean</em>. Below is a distribution of means from 10,000 different samples of size 30 from the population of 100. Hey, it looks like a normal distribution! That’s nifty.</p>
+<p><img src="Friendly-Statistics_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 </div>
-<div id="critical-f-value-cv-2" class="section level3">
-<h3><span class="header-section-number">13.1.2</span> Critical <em>F</em>-Value (CV)</h3>
-<p><span class="math inline">\(\Large N = number\ of\ participants\)</span><br />
-<br />
-</p>
-<p><span class="math inline">\(\Large n_{group} = number\ of\ participants\ in\ group\)</span><br />
-<br />
-</p>
-<p><span class="math inline">\(\Large k = number\ of\ groups\)</span><br />
-<br />
-</p>
-<p><span class="math inline">\(\Large df_{between} = k - 1\)</span><br />
-<br />
-</p>
-<p><span class="math inline">\(\Large df_{within} = (levels\ of\ A)*(levels\ of\ B)(n - 1)\)</span><br />
-<br />
-</p>
-<p><span class="math inline">\(\Large df_{total} = N - 1\)</span><br />
-<br />
-</p>
-<p><span class="math inline">\(\Large df_{A} = (levels\ of\ A) - 1\)</span><br />
-<br />
-</p>
-<p><span class="math inline">\(\Large df_{B} = (levels\ of\ B) - 1\)</span><br />
-<br />
-</p>
-<p><span class="math inline">\(\Large df_{interaction} = (df_A)*(df_B)\)</span><br />
-<br />
-</p>
-<p><span class="math inline">\(\Large \alpha = .05\)</span><br />
-<br />
-</p>
-<p><span class="math inline">\(\Large CV = [check\ table]\)</span><br />
-<br />
-</p>
+<div id="estimating-the-mean" class="section level2">
+<h2><span class="header-section-number">5.2</span> Estimating the Mean</h2>
+<p>This distribution has a pretty cool feature. The mean of sample means is <code>70.09</code>, and the actual population mean is <code>70.09</code>! Using this distribution, statisticians can estimate the population mean pretty accurately. But it’s also important to notice how some of the sample means were as low as <code>65</code>. It may not have been many, but it shows that there is always a chance that a sample could lead to an incorrect estimate.</p>
+<p>Because of these properties, the sample mean is known as an <strong>unbiased estimator</strong>. That is, it approximates the population mean precisely.</p>
 </div>
-<div id="calculate-f-2" class="section level3">
-<h3><span class="header-section-number">13.1.3</span> Calculate <em>F</em></h3>
-<p><span class="math inline">\(\Large T_{group} = \sum X_{group}\)</span><br />
+<div id="estimating-the-variance" class="section level2">
+<h2><span class="header-section-number">5.3</span> Estimating the Variance</h2>
+<p>Unlike the sample mean, the sample variance is a <strong>biased estimator</strong>. That is, it is consistently lower than the actual population variance. Sounds like we need a new formula! Remember the formula for calculating sample variance:</p>
+<p><span class="math inline">\(\Large s^2 = \frac{\sum (X_i - \bar X)^2}{N}\)</span><br />
 <br />
 </p>
-<p><span class="math inline">\(\Large SS_{total} = \sum X^2 - \frac{(\sum X)^2}{N}\)</span><br />
+<p>To calculate an estimate of the <em>population variance</em>, we alter the formula a bit:</p>
+<p><span class="math inline">\(\Large \hat s^2 = \frac{\sum (X_i - \bar X)^2}{N-1}\)</span><br />
 <br />
 </p>
-<p><span class="math inline">\(\Large SS_{within} = \sum X^2 - \frac{\sum T^2}{n}\)</span><br />
-<br />
-</p>
-<p><span class="math inline">\(\Large SS_{between} = \frac{\sum T^2}{n} - \frac{(\sum X)^2}{N}\)</span><br />
-<br />
-</p>
-<p><span class="math inline">\(\Large SS_{A} = \sum(\frac{T^2_{row}}{n_{row}}) - \frac{(\sum X)^2}{N}\)</span><br />
-<br />
-</p>
-<p><span class="math inline">\(\Large SS_{B} = \sum(\frac{T^2_{col}}{n_{col}}) - \frac{(\sum X)^2}{N}\)</span><br />
-<br />
-</p>
-<p><span class="math inline">\(\Large SS_{AB} = SS_{between} - SS_A - SS_B\)</span><br />
-<br />
-</p>
-<p><span class="math inline">\(\Large MS_{A} = \frac{SS_{A}}{df_{A}}\)</span><br />
-<br />
-</p>
-<p><span class="math inline">\(\Large MS_{B} = \frac{SS_{B}}{df_{B}}\)</span><br />
-<br />
-</p>
-<p><span class="math inline">\(\Large MS_{AB} = \frac{SS_{AB}}{df_{AB}}\)</span><br />
-<br />
-</p>
-<p><span class="math inline">\(\Large F_A = \frac{MS_{A}}{MS_{within}}\)</span><br />
-<br />
-</p>
-<p><span class="math inline">\(\Large F_B = \frac{MS_{B}}{MS_{within}}\)</span><br />
-<br />
-</p>
-<p><span class="math inline">\(\Large F_{AB} = \frac{MS_{AB}}{MS_{within}}\)</span><br />
-<br />
-</p>
+<p>Notice the tiny “hat” on the <span class="math inline">\(\hat s^2\)</span>. That little hat tells us that this is an estimate of the population variance This is distinguished from the sample variance and the actual population variance.</p>
 </div>
-<div id="compare-observed-f-value-to-cvs" class="section level3">
-<h3><span class="header-section-number">13.1.4</span> Compare Observed <em>F</em>-Value to CVs</h3>
-<p>If <em>F</em> is greater than the CV, <em>reject the null hypothesis.</em><br />
-If <em>F</em> is less than the CV, <em>fail to reject the null hypothesis.</em></p>
+<div id="estimating-the-standard-deviation" class="section level2">
+<h2><span class="header-section-number">5.4</span> Estimating the Standard Deviation</h2>
+<p>One of the ways to calculate the standard deviation in a sample is to take the square root of the variance. Fortunately, the same applies when estimating the population standard deviation (less formulas to remember!). You can simply use the following:</p>
+<p><span class="math inline">\(\Large \hat s = \sqrt{\hat s^2}\)</span><br />
+<br />
+</p>
+<p>Don’t get <span class="math inline">\(s\)</span> and <span class="math inline">\(\hat s\)</span> mixed up! They look very similar but are quite different.</p>
 </div>
-<div id="calculate-effect-size-6" class="section level3">
-<h3><span class="header-section-number">13.1.5</span> Calculate Effect Size</h3>
-<p><span class="math inline">\(\Large \eta^2_A = \frac{SS_{A}}{SS_{A} + SS_{within}}\)</span><br />
+<div id="estimating-standard-error" class="section level2">
+<h2><span class="header-section-number">5.5</span> Estimating Standard Error</h2>
+<p>In addition to calculating the mean of the <em>sampling distribution of the mean</em>, we can also calculate the standard deviation of the distribution. When this is done for the sampling distribution of the mean, this is called the <strong>standard error of the mean</strong>. A standard error of zero means that the sample mean estimates the population mean perfectly, while higher standard errors indicate a lack of reliability in the estimation of the population mean.</p>
+<p>The standard error of the mean is calculated with the following forumla:<br />
+<span class="math inline">\(\Large \sigma_{\bar X} = \frac{\sigma}{\sqrt{N}}\)</span><br />
 <br />
 </p>
-<p><span class="math inline">\(\Large \eta^2_B = \frac{SS_{B}}{SS_{B} + SS_{within}}\)</span><br />
+<p>But remember! We rarely know the population variance. So, we usually have to use this formula:<br />
+<span class="math inline">\(\Large \hat s_{\bar X} = \frac{\hat s}{\sqrt{N}}\)</span><br />
 <br />
 </p>
-<p><span class="math inline">\(\Large \eta^2_{AB} = \frac{SS_{AB}}{SS_{AB} + SS_{within}}\)</span><br />
-<br />
-</p>
+<p>It’s important not to get <span class="math inline">\(\hat s_{\bar X}\)</span> mixed up with <span class="math inline">\(s\)</span>, <span class="math inline">\(\hat s\)</span>, <span class="math inline">\(s^2\)</span>, and <span class="math inline">\(\hat s^2\)</span>! They can get pretty confusing.</p>
 </div>
+<div id="degrees-of-freedom" class="section level2">
+<h2><span class="header-section-number">5.6</span> Degrees of Freedom</h2>
+<p>Technically speaking, <strong>degrees of freedom</strong> tell us how many things in a set are independent of eachother. Now if you’re like me, that definition kinda makes no sense. So I’ll try to explain.</p>
+<p>Suppose you have a set of nine numbers. However, you only know the mean and eight of those numbers. Using basic algebra, you can solve for the ninth number. In other words, eight of those nine numbers were free to take on any value. But once they did, that ninth number could only take on one value. We could say that there were eight degrees of freedom there (because eight numbers were <strong>free</strong> to vary).</p>
 </div>
-<div id="tips-2" class="section level2">
-<h2><span class="header-section-number">13.2</span> Tips</h2>
-<p>Draw a table like the one below to organize your calculations as you go.<br />
-<br />
-</p>
+<div id="keeping-everything-straight" class="section level2">
+<h2><span class="header-section-number">5.7</span> Keeping Everything Straight</h2>
+<p>Here’s a table to help you remember the differences between population parameters, sample statistics, and sample estimates of population parameters:</p>
 <table>
+<colgroup>
+<col width="10%" />
+<col width="29%" />
+<col width="28%" />
+<col width="31%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th align="center">Source</th>
-<th align="center">SS</th>
-<th align="center">df</th>
-<th align="center">MS</th>
-<th align="center">F</th>
+<th align="center">Statistic</th>
+<th align="center">Population</th>
+<th align="center">Sample</th>
+<th align="center">Sample Estimate of the Popoulation</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="center">Main Effect Factor A</td>
-<td align="center">40</td>
-<td align="center">1</td>
-<td align="center">40</td>
-<td align="center">2</td>
+<td align="center">Mean</td>
+<td align="center"><span class="math inline">\(\Large \mu = \frac{\sum X_i}{N}\)</span></td>
+<td align="center"><span class="math inline">\(\Large \bar X = \frac{\sum X_i}{N}\)</span></td>
+<td align="center"><span class="math inline">\(\Large \bar X = \frac{\sum X_i}{N}\)</span></td>
 </tr>
 <tr class="even">
-<td align="center">Main Effect Factor B</td>
-<td align="center">40</td>
-<td align="center">1</td>
-<td align="center">40</td>
-<td align="center">2</td>
+<td align="center">Variance</td>
+<td align="center"><span class="math inline">\(\Large \sigma^2 = \frac{\sum (X_i - \mu)^2}{N}\)</span></td>
+<td align="center"><span class="math inline">\(\Large s^2 = \frac{\sum (X_i - \bar X)^2}{N}\)</span></td>
+<td align="center"><span class="math inline">\(\Large \hat s^2 = \frac{\sum (X_i - \bar X)^2}{N-1}\)</span></td>
 </tr>
 <tr class="odd">
-<td align="center">Interaction</td>
-<td align="center">80</td>
-<td align="center">1</td>
-<td align="center">80</td>
-<td align="center">4</td>
-</tr>
-<tr class="even">
-<td align="center">Within</td>
-<td align="center">140</td>
-<td align="center">7</td>
-<td align="center">20</td>
-<td align="center"></td>
-</tr>
-<tr class="odd">
-<td align="center">Total</td>
-<td align="center">300</td>
-<td align="center">10</td>
-<td align="center"></td>
-<td align="center"></td>
+<td align="center">Standard Deviation</td>
+<td align="center"><span class="math inline">\(\Large \sigma = \sqrt{\frac{\sum (X_i - \mu)^2}{N}}\)</span></td>
+<td align="center"><span class="math inline">\(\Large s = \sqrt{\frac{\sum (X_i - \bar X)^2}{N}}\)</span></td>
+<td align="center"><span class="math inline">\(\Large \hat s = \sqrt{\frac{\sum (X_i - \bar X)^2}{N-1}}\)</span></td>
 </tr>
 </tbody>
 </table>
-<p><br />
-</p>
-<p><em>F</em> is actually closely related to <em>t</em>: <span class="math inline">\(\Large F = t^2\)</span></p>
 
 </div>
 </div>
@@ -439,8 +336,8 @@ If <em>F</em> is less than the CV, <em>fail to reject the null hypothesis.</em><
           </div>
         </div>
       </div>
-<a href="one-way-repeated-measures-anova.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="correlation-and-regression.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="describing-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="hypothesis-testing.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

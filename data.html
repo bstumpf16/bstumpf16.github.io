@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 3 Data | Statistics for Psychology</title>
   <meta name="description" content="This is a draft of a super amazing stats textbook that I will totally write." />
-  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 3 Data | Statistics for Psychology" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="B. Cameron Stumpf" />
 
 
-<meta name="date" content="2020-03-27" />
+<meta name="date" content="2020-07-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -50,6 +50,7 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 
 
@@ -109,7 +110,8 @@
 <li class="chapter" data-level="5.4" data-path="estimation.html"><a href="estimation.html#estimating-the-standard-deviation"><i class="fa fa-check"></i><b>5.4</b> Estimating the Standard Deviation</a></li>
 <li class="chapter" data-level="5.5" data-path="estimation.html"><a href="estimation.html#estimating-standard-error"><i class="fa fa-check"></i><b>5.5</b> Estimating Standard Error</a></li>
 <li class="chapter" data-level="5.6" data-path="estimation.html"><a href="estimation.html#degrees-of-freedom"><i class="fa fa-check"></i><b>5.6</b> Degrees of Freedom</a></li>
-<li class="chapter" data-level="5.7" data-path="estimation.html"><a href="estimation.html#keeping-everything-straight"><i class="fa fa-check"></i><b>5.7</b> Keeping Everything Straight</a></li>
+<li class="chapter" data-level="5.7" data-path="estimation.html"><a href="estimation.html#effect-sizes"><i class="fa fa-check"></i><b>5.7</b> Effect Sizes</a></li>
+<li class="chapter" data-level="5.8" data-path="estimation.html"><a href="estimation.html#keeping-everything-straight"><i class="fa fa-check"></i><b>5.8</b> Keeping Everything Straight</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html"><i class="fa fa-check"></i><b>6</b> Hypothesis Testing</a><ul>
 <li class="chapter" data-level="6.1" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#stating-hypotheses"><i class="fa fa-check"></i><b>6.1</b> Stating Hypotheses</a></li>
@@ -240,10 +242,6 @@
 <p>“In God we trust, all others bring data.”<br />
 —W. Edwards Deming</p>
 </blockquote>
-<blockquote>
-<p>“You can have data without information, but you cannot have information without data.”<br />
-—Daniel Keys Moran</p>
-</blockquote>
 <div id="what-is-data" class="section level2">
 <h2><span class="header-section-number">3.1</span> What is data?</h2>
 <p>At its simplest, <strong>data is information.</strong> For the purposes of statistical analysis, the majority of data takes the form of numbers that represent things. The number <code>70</code> represents my height in inches. It is a <strong>data point.</strong></p>
@@ -253,7 +251,7 @@
 <div id="types-of-data-and-measurement" class="section level2">
 <h2><span class="header-section-number">3.2</span> Types of Data and Measurement</h2>
 <p><strong>Measurement</strong> is the process of quantifying something. By measuring my height, I assigned a number to myself that I can then use. I can share it with friends, compare it with others my age, or feel sad that it’s not a little higher. By the same process, I can measure the heights of 20 other people. I would then be <strong>collecting data.</strong></p>
-<p>Now, measurement is a hot topic. And really, it’s just a theory. There’s no perfect consensus on the proper way to think about measurement. Sorry to introduce some gray area and subjectivity, but that’s where we’re at. Who said things had to be easy? I won’t bore you with the details (there are too many to cover here anyway), but interested readers can read more about it elsewhere<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>.</p>
+<p>Now, measurement is a hot topic. And really, it’s just a theory. There’s no perfect consensus on the proper way to think about measurement. Sorry to introduce some gray area and subjectivity, but that’s where we’re at. Who said things had to be easy? I won’t bore you with the details (there are too many to cover here anyway), but interested readers can read more about it elsewhere<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>.</p>
 <p>Gray area is difficult to live in when it comes to mathematics, so at a point we must be decisive. One of the most widely accepted models of measurement in the field of psychology was published by Stanley Smith Stevens in 1946. Stevens classified measurement as falling into four types: nominal, ordinal, interval, or ratio. Each has specific characteristics and huge implications for how we handle data.</p>
 <div id="nominal" class="section level3">
 <h3><span class="header-section-number">3.2.1</span> Nominal</h3>
@@ -332,27 +330,27 @@
 </div>
 <div id="graphical-distributions" class="section level3">
 <h3><span class="header-section-number">3.3.2</span> Graphical Distributions</h3>
-<p>A <strong>bar graph</strong> is a visual representation of the frequencies in a data set when the variable is categorical.</p>
+<p>A <strong>bar graph</strong> is a visual representation of the frequencies in a data set when the variable is categorical or discrete.</p>
 <p><img src="Friendly-Statistics_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
-<p>A <strong>histograms</strong> is a visual representation of the frequencies in a data set when the variable is categorical. Histograms look similar to a bar graph. Notice that instead, <strong>the bars on a histogram are touching.</strong></p>
-<p>Each of our grades in the last example corresponded to an actual percentage. Let’s look at the distribution of those percentages.</p>
+<p>A <strong>histogram</strong> is a visual representation of the frequencies in a data set when the variable is continuous. Histograms look similar to a bar graph. Notice that instead, <strong>the bars on a histogram are touching.</strong></p>
+<p>Each of our letter grades in the last example corresponded to an actual percentage. Let’s look at the distribution of those percentages.</p>
 <p><img src="Friendly-Statistics_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 </div>
 <div id="probability-distributions" class="section level3">
 <h3><span class="header-section-number">3.3.3</span> Probability Distributions</h3>
-<p>An interesting feature of histograms is that they can also serve as probability distributions. <strong>Probability distributions</strong> are those that show the chances of selecting a value at random from a set. We can plot an approximated line on our histogram to demonstrate a probability distribution.</p>
+<p><strong>Probability distributions</strong> show the chances of selecting a value at random from a set. We can plot an approximated line on our histogram to demonstrate a probability distribution. This is called a probability density curve.</p>
 <p><img src="Friendly-Statistics_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
-<p>The higher the line, the higher the probability at that value. If we were to select a random grade from this set, this graph suggests that we would likely choose one between <code>.70</code> and <code>1</code>. The line is a lot lower near <code>.3</code>, suggesting that such a score is unlikely.<br />
-<br />
+<p>The higher the line, the higher the probability at that value. If we were to select a random grade from this set, this graph suggests that we would likely choose one between <span class="math inline">\(.70\)</span> and <span class="math inline">\(1\)</span>. The line is a lot lower near <span class="math inline">\(.30\)</span>, suggesting that such a score is unlikely.</p>
+<p>Note: If you really wanted to find the exact probability of picking a specific value at random, that probability would actually be quite small. Instead, statisticians often look at the probability of values within intervals.<br />
 </p>
 </div>
 <div id="the-normal-distribution" class="section level3">
 <h3><span class="header-section-number">3.3.4</span> The Normal Distribution</h3>
-<p>Distributions of actual data are called <strong>empirical distributions.</strong> We also talk about <strong>theoretical distributions</strong>, which have certain shapes and properties.</p>
+<p>Distributions of actual data, like in the previous section, are called <strong>empirical distributions.</strong> We also talk about <strong>theoretical distributions</strong>, which have certain shapes and properties.</p>
 <p>The <strong>normal distribution</strong> is a theoretical distribution that looks like a bell. For this reason, it is often called a <em>bell curve.</em> Normal distributions have a clump of scores in the middle (near the mean) that dwindle out in tails (moving away from the mean). Here is an example of normally distributed grades:</p>
 <p><img src="Friendly-Statistics_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
-<p>Statisticians will often talk about the <strong>central limit theorem</strong>, which is a fancy term that basically means: the larger your sample size, the closer it will get to normally distribution.</p>
-<p>The example above is a distribution of <code>800,000</code> scores. That is a lot. Contrast that with a distribution from only <code>50</code> scores:</p>
+<p>Statisticians will often talk about the <strong>central limit theorem</strong>, which is a fancy term that basically means: the larger your sample size, the closer it will get to a normal distribution.</p>
+<p>The example above is a distribution of <span class="math inline">\(800,000\)</span> scores. That is a lot. Contrast that with a distribution from only <span class="math inline">\(50\)</span> scores:</p>
 <p><img src="Friendly-Statistics_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <p>Sure, it’s still somewhat normal, but it’s nowhere near as nice and normal as the previous example.</p>
 
@@ -361,8 +359,8 @@
 </div>
 <div class="footnotes">
 <hr />
-<ol start="2">
-<li id="fn2"><p>insert a footnote to direct students<a href="data.html#fnref2" class="footnote-back">↩</a></p></li>
+<ol start="3">
+<li id="fn3"><p>insert a footnote to direct students<a href="data.html#fnref3" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 6 Hypothesis Testing | Statistics for Psychology</title>
   <meta name="description" content="This is a draft of a super amazing stats textbook that I will totally write." />
-  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 6 Hypothesis Testing | Statistics for Psychology" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="B. Cameron Stumpf" />
 
 
-<meta name="date" content="2020-03-27" />
+<meta name="date" content="2020-07-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -50,6 +50,7 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 
 
@@ -109,7 +110,8 @@
 <li class="chapter" data-level="5.4" data-path="estimation.html"><a href="estimation.html#estimating-the-standard-deviation"><i class="fa fa-check"></i><b>5.4</b> Estimating the Standard Deviation</a></li>
 <li class="chapter" data-level="5.5" data-path="estimation.html"><a href="estimation.html#estimating-standard-error"><i class="fa fa-check"></i><b>5.5</b> Estimating Standard Error</a></li>
 <li class="chapter" data-level="5.6" data-path="estimation.html"><a href="estimation.html#degrees-of-freedom"><i class="fa fa-check"></i><b>5.6</b> Degrees of Freedom</a></li>
-<li class="chapter" data-level="5.7" data-path="estimation.html"><a href="estimation.html#keeping-everything-straight"><i class="fa fa-check"></i><b>5.7</b> Keeping Everything Straight</a></li>
+<li class="chapter" data-level="5.7" data-path="estimation.html"><a href="estimation.html#effect-sizes"><i class="fa fa-check"></i><b>5.7</b> Effect Sizes</a></li>
+<li class="chapter" data-level="5.8" data-path="estimation.html"><a href="estimation.html#keeping-everything-straight"><i class="fa fa-check"></i><b>5.8</b> Keeping Everything Straight</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html"><i class="fa fa-check"></i><b>6</b> Hypothesis Testing</a><ul>
 <li class="chapter" data-level="6.1" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#stating-hypotheses"><i class="fa fa-check"></i><b>6.1</b> Stating Hypotheses</a></li>
@@ -239,38 +241,38 @@
 <p><strong>Hypothesis testing</strong> is the process of using data to evaluate a claim.</p>
 <div id="stating-hypotheses" class="section level2">
 <h2><span class="header-section-number">6.1</span> Stating Hypotheses</h2>
-<p>There are generally two hypotheses of interest: the alternative and the null. The <strong>alternative hypothesis</strong> is the researchers claim, often that a treatment has an effect on the participants. The <strong>null hypothesis</strong> states the opposite, that there is no effect. They are written like this:</p>
+<p>In psychology, there are generally two hypotheses of interest: the alternative and the null. The <strong>alternative hypothesis</strong> is the researchers claim, often that a treatment has an effect on the participants. The <strong>null hypothesis</strong> states the opposite, that there is no effect. They are written like this:</p>
 <p><span class="math inline">\(\Large H_0: \mu_1 - \mu_2 = 0\)</span><br />
 <br />
 <span class="math inline">\(\Large H_1: \mu_1 - \mu_2 \neq 0\)</span><br />
 <br />
 </p>
-<p>In the above, the null hypothesis (<span class="math inline">\(H_0\)</span>) states that one mean minus a secon mean equals zero. In other words, the two means are equal. If one population was treated differently than the other, the null hypothesis suggests that the treatment had no effect.</p>
+<p>In the above, the null hypothesis (<span class="math inline">\(H_0\)</span>) states that one mean minus a second mean equals zero. In other words, the two means are equal. If one population was treated differently than the other, the null hypothesis suggests that the treatment had no effect.</p>
 <p>The alternative hypothese (<span class="math inline">\(H_1\)</span>) states the opposite: that the two means differ from one another. In other words, the treatment had an effect. This is a vast oversimplification but it gets the point across.</p>
-<p>The hypothesis testing process aids us in decided which hypothesis to choose. Based on the evidence provided by the data, we can reject the null hypothesis. That makes sense, right? If our data disagrees that two means are equal, we reject the hypothesis that two means are equal. Pretty straightforward. But here is where it gets complicated (I totally understand if you have to read this over a couple times. Or 20).</p>
+<p>The hypothesis testing process aids us in deciding which hypothesis to believe Based on the evidence provided by the data, we can reject the null hypothesis. That makes sense, right? If our data disagrees that two means are equal, we reject the hypothesis that two means are equal. Pretty straightforward. But here is where it gets complicated (I totally understand if you have to read this over a couple times. Or <span class="math inline">\(20\)</span>).</p>
 <p>Even if we <strong>reject the null hypothesis</strong>, that does not mean we can accept the alternative hypothesis.</p>
 <p>And to complicate it even further, we can never accept that null hypothesis either. We can only <strong>fail to reject the null hypothesis</strong>. How’s that for a triple negative?</p>
-<p>Interested readers can read more elswhere<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>, but here is the bottomline: hypothesis testing can only help us to reject or fail to reject the null hypothesis. Nothing more, nothing less.</p>
+<p>Interested readers can read more elswhere<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a>, but here is the bottomline: traditional hypothesis testing can only help us to reject or fail to reject the null hypothesis. Nothing more, nothing less.</p>
 </div>
 <div id="rejecting-the-null" class="section level2">
 <h2><span class="header-section-number">6.2</span> Rejecting the Null</h2>
-<p>To reject the null hypothesis, your data must disagree with what the null hypothesis claims to be true. But we know that our methods are prone to error. Think about the following example. Your friend says that the class average on the exam was <code>90%</code>. You disagree with him and think it’s something else. You state your hypotheses:</p>
+<p>To reject the null hypothesis, your data must disagree with what the null hypothesis claims to be true. But we know that our methods are prone to error. Think about the following example. Your friend says that the class average on the exam was <span class="math inline">\(90\)</span>%. You disagree with him and think it’s something else. You state your hypotheses:</p>
 <p><span class="math inline">\(\Large H_0: \mu = 90%\)</span><br />
 <br />
 <span class="math inline">\(\Large H_1: \mu \neq 90%\)</span><br />
 <br />
 </p>
-<p>And say we asked <code>5</code> of the <code>20</code> students what they got on the test. The average of their scores was <code>88%</code>. That’s different from <code>90%</code>, but not by much. How much different does it have to be for us to reject the null hypothesis? Well, that typically has to do with how spread out the data is. If the scores varied by <code>20%</code> on average, then a <code>2%</code> difference might seem trivial. Your friend is probably right. But say that all the students in the sample scored <code>88%</code>. There is little variation there, so the <code>2%</code> difference might be meaninful.</p>
+<p>And say we asked <span class="math inline">\(5\)</span> of the <span class="math inline">\(20\)</span> students what they got on the test. The average of their scores was <span class="math inline">\(88\)</span>%. That’s different from <span class="math inline">\(90\)</span>%, but not by much. How much different does it have to be for us to reject the null hypothesis? Well, that typically has to do with how spread out the data is. If the scores varied by <span class="math inline">\(20\)</span>% on average, then a <span class="math inline">\(2\)</span>% difference might seem trivial. Your friend is probably right. But say that all the students in the sample scored <span class="math inline">\(88\)</span>%. There is little variation there, so the <span class="math inline">\(2\)</span>% difference might be meaningful.</p>
 </div>
 <div id="alpha-levels" class="section level2">
 <h2><span class="header-section-number">6.3</span> Alpha Levels</h2>
 <p>It’s safe to say that, in general, researchers want to reject the null hypothesis. They like to show that things are related or have influence on other things. But remember how statistics is prone to error? Even decisions about hypothesis testing are prone to error. A research that rejects their null hypothesis can be wrong (Whaaaaaat researchers can be wrong? What a concept.).</p>
-<p>Alpha levels are important to hypothesis testing because they tell us how often we are will reject the null hypothesis and be wrong. Psychological researchers often set alpha levels to <code>.05</code>, meaning that they are willing to accept that they are wrong <code>5%</code> of the time. More accurately, they will reject the null hypothesis when it is actually true <code>5%</code> of the time.</p>
+<p>Alpha levels are important to hypothesis testing because they tell us how often we are will reject the null hypothesis and be wrong. Psychological researchers often set alpha levels to <span class="math inline">\(.05\)</span>, meaning that they are willing to accept that they are wrong <span class="math inline">\(5\)</span>% of the time. More accurately, they will reject the null hypothesis when it is actually true <span class="math inline">\(5\)</span>% of the time.</p>
 </div>
 <div id="type-i-type-ii-errors" class="section level2">
 <h2><span class="header-section-number">6.4</span> Type I &amp; Type II Errors</h2>
 <p>There are actually two types of errors in hypothesis testing. <strong>Type I errors</strong> (<span class="math inline">\(\alpha\)</span>) happen when a researcher rejects the null hypothesis when it is actually true. Our <em>alpha level</em> reflects the rate of this type of error. In addition, <strong>Type II errors</strong> (<span class="math inline">\(\beta\)</span>) happen when a researcher fails to reject the null hypothesis when it is actually not true. I remember them by thinking to myself <em>alpha is Type I because 1 comes first and alpha comes first…</em></p>
-<p>Which is worse? Psychology students are usually taught that Type I errors are typically worse. After all, if we incorrectly determine that a treatment is beneficial, when it is actually harmful, that would be a pretty serious error. On the flipside, if a treatment is actually beneficial but but our hypothesis test tells us that it’s not, then people may suffer without that treatment. A more nuanced view of this dilemma aks us to look at these things in context and ask more questions. What are the possible benefits? What are the possible consequences?</p>
+<p>Which is worse? Psychology students are usually taught that Type I errors are typically worse. After all, if we incorrectly determine that a treatment is beneficial, when it is actually harmful, that would be a pretty serious error. On the flipside, if a treatment is actually beneficial but but our hypothesis test tells us that it’s not, then people may suffer without that treatment. A more nuanced view of this dilemma asks us to look at these things in context and ask more questions. What are the possible benefits? What are the possible consequences?</p>
 </div>
 <div id="power-and-sample-size" class="section level2">
 <h2><span class="header-section-number">6.5</span> Power and Sample Size</h2>
@@ -304,8 +306,8 @@
 </div>
 <div class="footnotes">
 <hr />
-<ol start="3">
-<li id="fn3"><p>insert footnote here<a href="hypothesis-testing.html#fnref3" class="footnote-back">↩</a></p></li>
+<ol start="5">
+<li id="fn5"><p>insert footnote here<a href="hypothesis-testing.html#fnref5" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

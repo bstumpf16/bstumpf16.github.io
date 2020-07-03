@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 2 What is statistics? | Statistics for Psychology</title>
   <meta name="description" content="This is a draft of a super amazing stats textbook that I will totally write." />
-  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 2 What is statistics? | Statistics for Psychology" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="B. Cameron Stumpf" />
 
 
-<meta name="date" content="2020-03-27" />
+<meta name="date" content="2020-07-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -50,6 +50,7 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 
 
@@ -109,7 +110,8 @@
 <li class="chapter" data-level="5.4" data-path="estimation.html"><a href="estimation.html#estimating-the-standard-deviation"><i class="fa fa-check"></i><b>5.4</b> Estimating the Standard Deviation</a></li>
 <li class="chapter" data-level="5.5" data-path="estimation.html"><a href="estimation.html#estimating-standard-error"><i class="fa fa-check"></i><b>5.5</b> Estimating Standard Error</a></li>
 <li class="chapter" data-level="5.6" data-path="estimation.html"><a href="estimation.html#degrees-of-freedom"><i class="fa fa-check"></i><b>5.6</b> Degrees of Freedom</a></li>
-<li class="chapter" data-level="5.7" data-path="estimation.html"><a href="estimation.html#keeping-everything-straight"><i class="fa fa-check"></i><b>5.7</b> Keeping Everything Straight</a></li>
+<li class="chapter" data-level="5.7" data-path="estimation.html"><a href="estimation.html#effect-sizes"><i class="fa fa-check"></i><b>5.7</b> Effect Sizes</a></li>
+<li class="chapter" data-level="5.8" data-path="estimation.html"><a href="estimation.html#keeping-everything-straight"><i class="fa fa-check"></i><b>5.8</b> Keeping Everything Straight</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html"><i class="fa fa-check"></i><b>6</b> Hypothesis Testing</a><ul>
 <li class="chapter" data-level="6.1" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#stating-hypotheses"><i class="fa fa-check"></i><b>6.1</b> Stating Hypotheses</a></li>
@@ -236,11 +238,18 @@
             <section class="normal" id="section-">
 <div id="what-is-statistics" class="section level1">
 <h1><span class="header-section-number">Chapter 2</span> What is statistics?</h1>
-<p>The word “statistics” is confusingly used in numerous ways. <strong>Statistics</strong> can refer to the field of mathematics or the analyses used by that field. A <strong>statistic</strong> is a quantitative summarization of data. In other words, a statistic is a number that describes observations. A <strong>mean</strong> is an example of a statistic.</p>
+<p>The word “statistics” is confusingly used in numerous ways. <strong>Statistics</strong> can refer to the field of mathematics or the analyses used by that field. A <strong>statistic</strong> is a quantitative summarization of data. In other words, a statistic is a number that describes something, usuall multiple observations of something A <strong>mean</strong> is an example of a statistic.</p>
 <p>Statistical analyses are helpful because they allow us to understand the world on a deeper level. Whereas we are not entirely capable of looking at a spreadsheet of numbers and noticing trends and relationships, the process of statistical analysis can do just that.</p>
+<p>A helpful way of understanding statistical analysis is to look at it as model-building. Imagine a model train. The model train is different from the real train it was designed after: it’s smaller, made of different materials, less detailed. But they also share a number of similarities: shape, colors, proportions. The point of the model train is not for it to perfectly replicate the real train. Rather, it serves as a simplified version where specific details are retained and others are tossed away.</p>
+<p>Statistical analysis is mathematical modeling. We take the real world and assign numbers to certain things. In doing so, we are creating a vast simplification and ignoring many other details. However, that simplification allows us to do a number of things. It’s a constant trade-off between accuracy and simplicity. This is captured well in the following quote:</p>
+<blockquote>
+<p>“All models are wrong, but some are useful.”<br />
+—George Box</p>
+</blockquote>
+<p>The point of statistics is not perfection. It’s utility.</p>
 <div id="statistics-in-psychology" class="section level2">
 <h2><span class="header-section-number">2.1</span> Statistics in Psychology</h2>
-<p>Psychology involves, the vast majority of the time, the study of people. The inherent problem is that such study is messy and prone to error. This is why the field of psychology has been criticized since its conception. However, statistics is like the housekeeper who cleans up the mess before guests arive. With it, psychology becomes more rigorous and scientific.</p>
+<p>Psychology involves, the vast majority of the time, the study of people. The inherent problem is that such study is messy and prone to error. This is why the field of psychology has been criticized since its conception. However, statistics is like the housekeeper who cleans up the mess before guests arrive. With it, psychology becomes more rigorous and scientific.</p>
 <p>One way we can think about the mess involved in the study of psychology is the uncertainty it creates. For example, when individuals fill out surveys, we don’t know with 100% certainty that they are being truthful. Unfortunately, if individuals lie in our studies, that takes away from our ability to draw meaningful conclusions from our results. Statistics uses mathematics and probability to <em>quantify</em> that uncertainty (see Hypothesis Testing).</p>
 </div>
 <div id="populations-and-samples" class="section level2">
@@ -254,7 +263,9 @@
 </div>
 <div id="probability" class="section level2">
 <h2><span class="header-section-number">2.3</span> Probability</h2>
-<p>We use probability to quantify our uncertainty (or errors, or variability, or whichever word you choose). In doing so, we use words like “chance,” “randomness,” and “percentage.” In fact, we talk a whole lot about percentages. It’s good to be familiar with them.</p>
+<p>We use <strong>probability</strong> to <em>quantify our uncertainty</em> (uncertainty can come from errors or just variability). It’s also worth knowing that there have been decades of ongoing debate regarding what probability truly means<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>. Probabilities can be said to measure tendencies or long-term frequencies. Saying that something has <span class="math inline">\(.80\)</span> probability implies that, over time, it will occur in <span class="math inline">\(8/10\)</span> instances. Some translate it as an “<span class="math inline">\(80\)</span>% chance.” Regardless, these debates will not likely influence the use of probabilities at beginner levels of statistical analysis.</p>
+<p>Probability notation follows a simple format: <span class="math inline">\(P(X) = p\)</span> where <span class="math inline">\(P\)</span> indicates probability, <span class="math inline">\(X\)</span> indicates what the probability refers to, and <span class="math inline">\(p\)</span> is the value of the probability. For example, the probability that the sun will rise tomorrow can be written as <span class="math inline">\(P(sun\ rising) = .99\)</span>.</p>
+<p>We also talk about <strong>conditional probabilities</strong>, which refer to probabilities given some <em>condition</em>. These are written similarly: <span class="math inline">\(P(X\ |\ Y) = p\)</span>. For example the probability that you are in a statistics course given that you are reading this can be written as <span class="math inline">\(P(You\ are\ in\ statistics\ |\ You\ are\ reading\ this) = 1.00\)</span>. The <em>given</em> is the condition, and is written after the vertical bar <span class="math inline">\(|\)</span> in the parentheses.</p>
 </div>
 <div id="notation" class="section level2">
 <h2><span class="header-section-number">2.4</span> Notation</h2>
@@ -285,6 +296,7 @@
 </tr>
 </tbody>
 </table>
+<p>Subscripts are often used to identify specific things when there are more than one of that thing. You will find that <span class="math inline">\(H\)</span> stands for <em>hypothesis</em>, and the subscripts on <span class="math inline">\(H_0\)</span> and <span class="math inline">\(H_1\)</span> tell us which hypothesis. Further, <span class="math inline">\(\bar X_a\)</span> and <span class="math inline">\(\bar X_b\)</span> are both means, but refer to different means.</p>
 </div>
 <div id="controversy" class="section level2">
 <h2><span class="header-section-number">2.5</span> Controversy</h2>
@@ -295,7 +307,8 @@
 <div class="footnotes">
 <hr />
 <ol start="1">
-<li id="fn1"><p>insert some kind of reference here to the debates<a href="what-is-statistics.html#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn1"><p>insert some kind of reference here to the debates<a href="what-is-statistics.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>Bandyopadhyay &amp; Cherry, 2011<a href="what-is-statistics.html#fnref2" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

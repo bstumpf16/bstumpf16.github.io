@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 5 Estimation | Statistics for Psychology</title>
   <meta name="description" content="This is a draft of a super amazing stats textbook that I will totally write." />
-  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 5 Estimation | Statistics for Psychology" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="B. Cameron Stumpf" />
 
 
-<meta name="date" content="2020-03-27" />
+<meta name="date" content="2020-07-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -50,6 +50,7 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 
 
@@ -109,7 +110,8 @@
 <li class="chapter" data-level="5.4" data-path="estimation.html"><a href="estimation.html#estimating-the-standard-deviation"><i class="fa fa-check"></i><b>5.4</b> Estimating the Standard Deviation</a></li>
 <li class="chapter" data-level="5.5" data-path="estimation.html"><a href="estimation.html#estimating-standard-error"><i class="fa fa-check"></i><b>5.5</b> Estimating Standard Error</a></li>
 <li class="chapter" data-level="5.6" data-path="estimation.html"><a href="estimation.html#degrees-of-freedom"><i class="fa fa-check"></i><b>5.6</b> Degrees of Freedom</a></li>
-<li class="chapter" data-level="5.7" data-path="estimation.html"><a href="estimation.html#keeping-everything-straight"><i class="fa fa-check"></i><b>5.7</b> Keeping Everything Straight</a></li>
+<li class="chapter" data-level="5.7" data-path="estimation.html"><a href="estimation.html#effect-sizes"><i class="fa fa-check"></i><b>5.7</b> Effect Sizes</a></li>
+<li class="chapter" data-level="5.8" data-path="estimation.html"><a href="estimation.html#keeping-everything-straight"><i class="fa fa-check"></i><b>5.8</b> Keeping Everything Straight</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html"><i class="fa fa-check"></i><b>6</b> Hypothesis Testing</a><ul>
 <li class="chapter" data-level="6.1" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#stating-hypotheses"><i class="fa fa-check"></i><b>6.1</b> Stating Hypotheses</a></li>
@@ -236,19 +238,19 @@
             <section class="normal" id="section-">
 <div id="estimation" class="section level1">
 <h1><span class="header-section-number">Chapter 5</span> Estimation</h1>
-<p>Most of the time, we don’t know the population parameters we are interested in and it would be unrealistic to collect data from everyone in the population. <strong>Estimation</strong> allows us to take a sample from that population and use that sample to make an educated guess about the population. This process is also referred to as <strong>inferential statistics.</strong></p>
+<p>Most of the time, we don’t know the values of the population parameters we are interested in and it would be unrealistic to collect data from everyone in the population. <strong>Estimation</strong> allows us to take a sample from that population and use that sample to make an educated guess about the population. This process is also referred to as <strong>inferential statistics.</strong></p>
 <p>This process usually involves taking a <em>sample statistic</em> and using that to estimate the <em>population parameter</em>. The primary issue here is whether the sample accurately reflects the population or not. Every sample could be different, right? So how do we know which sample to trust?</p>
 <p>The short answer: we don’t. Statisticians wish that such certainty was possible. But then again, the whole concept of statistical analysis is to figure out how to handle our uncertainty. The concept of sampling distributions helps us do this.</p>
 <div id="sampling-distribution" class="section level2">
 <h2><span class="header-section-number">5.1</span> Sampling Distribution</h2>
-<p>A <strong>sampling Distribution of a statistic</strong> is a distribution of all possible values of that statistic from all possible samples of a population. This is not to be confused with the <em>sample distribution</em>, which is the distribution of scores in a sample.</p>
-<p>Say we have a population of <code>100</code>. And say we took a sample of <code>30</code>. That means that there are 70 individuals who were not sampled. Couldn’t we have just as easily chosen a sample of a different 30 individuals? In fact, there are <code>29,372,339,821,610,944,823,963,760</code> different possible samples of we could have taken.</p>
-<p>Now, each of those samples could have given us a different mean. if we had actually taken all possible samples, and taken all possible means, then we would have a large set of numbers. And what can we do with sets of numbers? Graph distributions! More specifically, we can create a <em>sampling distribution of the mean</em>. Below is a distribution of means from 10,000 different samples of size 30 from the population of 100. Hey, it looks like a normal distribution! That’s nifty.</p>
+<p>A <strong>sampling distribution of a statistic</strong> is a distribution of all possible values of that statistic from all possible samples of a population. This is not to be confused with the <em>sample distribution</em>, which is the distribution of scores in a sample.</p>
+<p>Say we have a population of <span class="math inline">\(100\)</span>. And say we took a sample of <span class="math inline">\(30\)</span>. That means that there are <span class="math inline">\(70\)</span> individuals who were not sampled. Couldn’t we have just as easily chosen a sample of a different <span class="math inline">\(30\)</span> individuals? In fact, there are <span class="math inline">\(29,372,339,821,610,944,823,963,760\)</span> different possible samples of we could have taken.</p>
+<p>Now, each of those samples could have given us a different mean. If we had actually taken all possible samples, and taken all possible means, then we would have a large set of numbers. And what can we do with sets of numbers? Create distributions! More specifically, we can create a <em>sampling distribution of the mean</em>. Below is a distribution of means from <span class="math inline">\(10,000\)</span> different samples of size <span class="math inline">\(30\)</span> from the population of <span class="math inline">\(100\)</span>. Hey, it looks like a normal distribution! That’s nifty.</p>
 <p><img src="Friendly-Statistics_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 </div>
 <div id="estimating-the-mean" class="section level2">
 <h2><span class="header-section-number">5.2</span> Estimating the Mean</h2>
-<p>This distribution has a pretty cool feature. The mean of sample means is <code>70.09</code>, and the actual population mean is <code>70.09</code>! Using this distribution, statisticians can estimate the population mean pretty accurately. But it’s also important to notice how some of the sample means were as low as <code>65</code>. It may not have been many, but it shows that there is always a chance that a sample could lead to an incorrect estimate.</p>
+<p>This distribution has a pretty cool feature. The mean of sample means is <code>69.69</code>, and the actual population mean is <code>69.68</code>! Using this distribution, statisticians can estimate the population mean pretty accurately. But it’s also important to notice how some of the sample means were as low as <span class="math inline">\(65\)</span>. It may not have been many, but it shows that there is always a chance that a sample could lead to an incorrect estimate.</p>
 <p>Because of these properties, the sample mean is known as an <strong>unbiased estimator</strong>. That is, it approximates the population mean precisely.</p>
 </div>
 <div id="estimating-the-variance" class="section level2">
@@ -261,6 +263,7 @@
 <p><span class="math inline">\(\Large \hat s^2 = \frac{\sum (X_i - \bar X)^2}{N-1}\)</span><br />
 <br />
 </p>
+<p>Because the sample variance underestimates the population variance, we subtract <code>1</code> from the denominator. This beefs up the estimate a little bit to compensate for the bias.</p>
 <p>Notice the tiny “hat” on the <span class="math inline">\(\hat s^2\)</span>. That little hat tells us that this is an estimate of the population variance This is distinguished from the sample variance and the actual population variance.</p>
 </div>
 <div id="estimating-the-standard-deviation" class="section level2">
@@ -273,13 +276,13 @@
 </div>
 <div id="estimating-standard-error" class="section level2">
 <h2><span class="header-section-number">5.5</span> Estimating Standard Error</h2>
-<p>In addition to calculating the mean of the <em>sampling distribution of the mean</em>, we can also calculate the standard deviation of the distribution. When this is done for the sampling distribution of the mean, this is called the <strong>standard error of the mean</strong>. A standard error of zero means that the sample mean estimates the population mean perfectly, while higher standard errors indicate a lack of reliability in the estimation of the population mean.</p>
-<p>The standard error of the mean is calculated with the following forumla:<br />
-<span class="math inline">\(\Large \sigma_{\bar X} = \frac{\sigma}{\sqrt{N}}\)</span><br />
+<p>In addition to calculating the mean of the <em>sampling distribution of the mean</em>, we can also calculate the standard deviation of the sampling distribution. When this is done for the sampling distribution of the mean, this is called the <strong>standard error of the mean</strong>. A standard error of <span class="math inline">\(0\)</span> means that the sample mean estimates the population mean perfectly, while higher standard errors indicate a lack of reliability in the estimation of the population mean.</p>
+<p>The standard error of the mean is calculated with the following forumla:</p>
+<p><span class="math inline">\(\Large \sigma_{\bar X} = \frac{\sigma}{\sqrt{N}}\)</span><br />
 <br />
 </p>
-<p>But remember! We rarely know the population variance. So, we usually have to use this formula:<br />
-<span class="math inline">\(\Large \hat s_{\bar X} = \frac{\hat s}{\sqrt{N}}\)</span><br />
+<p>But remember! We rarely know the population variance. So, we usually have to use this formula:</p>
+<p><span class="math inline">\(\Large \hat s_{\bar X} = \frac{\hat s}{\sqrt{N}}\)</span><br />
 <br />
 </p>
 <p>It’s important not to get <span class="math inline">\(\hat s_{\bar X}\)</span> mixed up with <span class="math inline">\(s\)</span>, <span class="math inline">\(\hat s\)</span>, <span class="math inline">\(s^2\)</span>, and <span class="math inline">\(\hat s^2\)</span>! They can get pretty confusing.</p>
@@ -287,10 +290,48 @@
 <div id="degrees-of-freedom" class="section level2">
 <h2><span class="header-section-number">5.6</span> Degrees of Freedom</h2>
 <p>Technically speaking, <strong>degrees of freedom</strong> tell us how many things in a set are independent of eachother. Now if you’re like me, that definition kinda makes no sense. So I’ll try to explain.</p>
-<p>Suppose you have a set of nine numbers. However, you only know the mean and eight of those numbers. Using basic algebra, you can solve for the ninth number. In other words, eight of those nine numbers were free to take on any value. But once they did, that ninth number could only take on one value. We could say that there were eight degrees of freedom there (because eight numbers were <strong>free</strong> to vary).</p>
+<p>Suppose you have a set of nine numbers. However, you only know the mean and eight of those numbers. Using basic algebra, you can solve for the ninth number. In other words, eight of those nine numbers were free to take on any value. But once they did, that ninth number could only take on one value. We could say that there were eight degrees of freedom there (because eight numbers were <em>free</em> to vary).</p>
+</div>
+<div id="effect-sizes" class="section level2">
+<h2><span class="header-section-number">5.7</span> Effect Sizes</h2>
+<p>In addition to descriptive statistics, data analysis often involves the estimation of <strong>effect sizes</strong>. Effect sizes are somewhat like descriptive statistics, except they usually describe multiple variables at a time. They describe the <em>magnitude</em> of the impact of one variable (or multiple variables) on another variable. The choice of effect size depends on the type of data. Below are the effect sizes that will be covered for each statistical test.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Test</th>
+<th align="center">Population Effect Size</th>
+<th>Sample Effect Size</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">z and t</td>
+<td align="center"><span class="math inline">\(\Large \delta\)</span></td>
+<td><span class="math inline">\(\Large d\)</span></td>
+</tr>
+<tr class="even">
+<td align="center">ANOVAs</td>
+<td align="center"><span class="math inline">\(\Large \eta^2\)</span></td>
+<td><span class="math inline">\(\Large \eta^2\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center">Correlation and Regression</td>
+<td align="center"><span class="math inline">\(\Large \rho, P^2, \beta\)</span></td>
+<td><span class="math inline">\(\Large r, R^2, b\)</span></td>
+</tr>
+<tr class="even">
+<td align="center">Chi-Square</td>
+<td align="center"><span class="math inline">\(\Large \phi\)</span></td>
+<td><span class="math inline">\(\Large V\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>In general, <span class="math inline">\(d\)</span> measures group differences. The effect sizes <span class="math inline">\(r, R^2, b,\ and\ V\)</span> measure associations. Depending on the context, <span class="math inline">\(\eta^2\)</span> may measure either group differences or associations.</p>
+<p><em>Terminology note</em>: All effect sizes are either statistics (in samples) or parameters (in populations). This is the reason for the differences in notation in the table above. However, perhaps because nothing can be that simple, the greek notation <span class="math inline">\(\eta^2\)</span> is used even for sample effect sizes.</p>
+<p>Effect sizes have had a troubled past with a number of different interpretations<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>. Given Funder and Ozer’s (2019) reccomendations, the traditional benchmarks for <em>small, medium, and large</em> effect sizes will not be given here. Effect sizes should instead be interpreted within the context of the problem. As a general guideline, larger values indicate stronger effects.</p>
 </div>
 <div id="keeping-everything-straight" class="section level2">
-<h2><span class="header-section-number">5.7</span> Keeping Everything Straight</h2>
+<h2><span class="header-section-number">5.8</span> Keeping Everything Straight</h2>
 <p>Here’s a table to help you remember the differences between population parameters, sample statistics, and sample estimates of population parameters:</p>
 <table>
 <colgroup>
@@ -330,6 +371,12 @@
 </table>
 
 </div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="4">
+<li id="fn4"><p>Kelley &amp; Preacher, 2012<a href="estimation.html#fnref4" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 

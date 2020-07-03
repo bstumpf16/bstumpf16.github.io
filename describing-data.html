@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 4 Describing Data | Statistics for Psychology</title>
   <meta name="description" content="This is a draft of a super amazing stats textbook that I will totally write." />
-  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 4 Describing Data | Statistics for Psychology" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="B. Cameron Stumpf" />
 
 
-<meta name="date" content="2020-03-27" />
+<meta name="date" content="2020-07-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -50,6 +50,7 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 
 
@@ -109,7 +110,8 @@
 <li class="chapter" data-level="5.4" data-path="estimation.html"><a href="estimation.html#estimating-the-standard-deviation"><i class="fa fa-check"></i><b>5.4</b> Estimating the Standard Deviation</a></li>
 <li class="chapter" data-level="5.5" data-path="estimation.html"><a href="estimation.html#estimating-standard-error"><i class="fa fa-check"></i><b>5.5</b> Estimating Standard Error</a></li>
 <li class="chapter" data-level="5.6" data-path="estimation.html"><a href="estimation.html#degrees-of-freedom"><i class="fa fa-check"></i><b>5.6</b> Degrees of Freedom</a></li>
-<li class="chapter" data-level="5.7" data-path="estimation.html"><a href="estimation.html#keeping-everything-straight"><i class="fa fa-check"></i><b>5.7</b> Keeping Everything Straight</a></li>
+<li class="chapter" data-level="5.7" data-path="estimation.html"><a href="estimation.html#effect-sizes"><i class="fa fa-check"></i><b>5.7</b> Effect Sizes</a></li>
+<li class="chapter" data-level="5.8" data-path="estimation.html"><a href="estimation.html#keeping-everything-straight"><i class="fa fa-check"></i><b>5.8</b> Keeping Everything Straight</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html"><i class="fa fa-check"></i><b>6</b> Hypothesis Testing</a><ul>
 <li class="chapter" data-level="6.1" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#stating-hypotheses"><i class="fa fa-check"></i><b>6.1</b> Stating Hypotheses</a></li>
@@ -262,7 +264,7 @@
 <br />
 </p>
 <p>The median is not as sensitive to more extreme numbers like the mean is. For this reason, you will often here people talk about <em>median income</em> instead of <em>mean income</em> (high-earners throw off the mean).</p>
-<p>Just to drive the point home further, we could change <code>500</code> to <code>1,000,000</code>. The mean would then become <code>142881.3</code> but the median would stay at <code>31</code>.</p>
+<p>Just to drive the point home further, we could change <span class="math inline">\(500\)</span> to <span class="math inline">\(1,000,000\)</span>. The mean would then become <span class="math inline">\(142881.3\)</span> but the median would stay at <span class="math inline">\(31\)</span>.</p>
 </div>
 <div id="mode" class="section level4">
 <h4><span class="header-section-number">4.1.1.3</span> Mode</h4>
@@ -274,12 +276,13 @@
 </div>
 <div id="variability" class="section level2">
 <h2><span class="header-section-number">4.2</span> Variability</h2>
-<p>One number isn’t usually great at describing a data set. Sure, the mean might be <code>50</code>, but what about the other numbers? That is where variability comes in. <strong>Variability</strong> describes how the scores <em>vary</em> or differ from one another.</p>
+<p>One number isn’t usually great at describing a data set. Sure, the mean might be <span class="math inline">\(50\)</span>, but what about the other numbers? That is where variability comes in. <strong>Variability</strong> describes how the scores <em>vary</em> or differ from one another.</p>
 <div id="common-measures-of-variability" class="section level3">
 <h3><span class="header-section-number">4.2.1</span> Common Measures of Variability</h3>
 <div id="range" class="section level4">
 <h4><span class="header-section-number">4.2.1.1</span> Range</h4>
 <p>The <strong>range</strong> of data is defined by the lowest score and the highest score, as well as the difference between them. Looking at the range of data can be helpful because it intuitively shows how spread out the data is.</p>
+<p><span class="math inline">\(\Large Range = lowest\ score\ -\ highest\ score\)</span></p>
 </div>
 <div id="standard-deviation" class="section level4">
 <h4><span class="header-section-number">4.2.1.2</span> Standard Deviation</h4>
@@ -292,7 +295,7 @@
 <br />
 </p>
 <p>Waaaaaaaaaait. I said the standard deviation was just an average, right? Why are things being squared and square rooted?</p>
-<p>If we were to sum all of the differences between each score and the mean, they would typically cancell out and equal zero (scores below the mean will give a negative difference, while scores above the mean will give a positive difference).</p>
+<p>If we were to sum all of the differences between each score and the mean, they would typically cancel out and equal zero (scores below the mean will give a negative difference, while scores above the mean will give a positive difference, which added together equals zero).</p>
 <p>So, they must be squared. But why are we square rooting things too?!?! That makes it easier to interpret. If we didn’t, we would be interpreting <em>the average square distance from the mean.</em> I don’t know about you, but I’m not smart enough for that to make intuitive sense. Instead, if we square root it, we can interpret it as <em>the average distance from the mean</em>, which makes much more sense.</p>
 </div>
 <div id="variance" class="section level4">
@@ -305,7 +308,7 @@
 <p><span class="math inline">\(\Large s = \sqrt{s^2}\)</span><br />
 <br />
 </p>
-<p>Be sure not to mistake them for eachtother (it’s really easy to do so but devastating to your analyses).</p>
+<p>Be sure not to mistake them for eachother. It’s really easy to do so, but devastating to your analyses.</p>
 </div>
 </div>
 </div>
@@ -341,7 +344,7 @@ Notice also that instead of using <span class="math inline">\(\bar X\)</span> in
 <div id="percentiles" class="section level3">
 <h3><span class="header-section-number">4.5.1</span> Percentiles</h3>
 <p>One way to compare scores the all others is with percentiles. <strong>Percentiles</strong> note the percentage of other scores that a particular score is above. Does that sound familiar? It’s very similar to the idea of <em>cumulative relative frequencies.</em></p>
-<p>We can refer to the 90th percentile in a data set, which indicates the score at which <code>90%</code> of other scores fall below. We can also say that someone scored in the 90th percentile, which indicates that they scored above <code>90%</code> of the other scores. Percentiles are often used in standardized testing.</p>
+<p>We can refer to the <span class="math inline">\(90\)</span>th percentile in a data set, which indicates the score at which <span class="math inline">\(90\)</span>% of other scores fall below. We can also say that someone scored in the <span class="math inline">\(90\)</span>th percentile, which indicates that they scored above <span class="math inline">\(90\)</span>% of the other scores. Percentiles are often used in standardized testing.</p>
 </div>
 <div id="standard-scores" class="section level3">
 <h3><span class="header-section-number">4.5.2</span> Standard Scores</h3>
